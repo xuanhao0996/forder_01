@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2018 4:21:21 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.framgia.model.Orders" table="orders" catalog="forder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="payments" class="com.framgia.model.Payments" fetch="select">
+            <column name="payment_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="shippingInfo" class="com.framgia.model.ShippingInfo" fetch="select">
+            <column name="shipping_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="com.framgia.model.Users" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="totalBill" type="float">
+            <column name="total_bill" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <list name="orderDetails" table="order_detail" inverse="true" fetch="select">
+            <key>
+                <column name="order_id" not-null="true" />
+            </key>
+            <list-index column="id" base="1"/>
+            <one-to-many class="com.framgia.model.OrderDetail" />
+        </list>
+    </class>
+</hibernate-mapping>
