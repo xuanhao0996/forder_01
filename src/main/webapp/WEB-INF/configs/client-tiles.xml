@@ -13,39 +13,24 @@
 		<!-- Default CSS -->
 		<put-list-attribute name="client-css">
 			<add-attribute value="/assets/css/bootstrap.css"/>
-			<add-attribute value="/assets/css/creditly.css"/>
-			<add-attribute value="/assets/css/easy-responsive-tabs.css"/>
-			<add-attribute value="/assets/css/flexslider.css"/>
-			<add-attribute value="/assets/css/font-awesome.css"/>
 			<add-attribute value="/assets/css/style.css"/>
+			<add-attribute value="/assets/css/etalage.css"/>
+
 		</put-list-attribute>
 		
 		<!-- Default JS -->
 		<put-list-attribute name="client-js">
-			<add-attribute value="/assets/js/bootstrap.min.js"/>
-			<add-attribute value="/assets/js/counterup.min.js"/>
-			<add-attribute value="/assets/js/creditly.js"/>
-			<add-attribute value="/assets/js/easing.js"/>
-			<add-attribute value="/assets/js/easyResponsiveTabs.js"/>
-			<add-attribute value="/assets/js/jquery.flexslider.js"/>
-			<add-attribute value="/assets/js/jquery.wmuSlider.js"/>
-			<add-attribute value="/assets/js/jquery-1.11.1.min.js"/>
-			<add-attribute value="/assets/js/minicart.js"/>
-			<add-attribute value="/assets/js/move-top.js"/>
-			<add-attribute value="/assets/js/okzoom.js"/>
-			<add-attribute value="/assets/js/waypoints.min.js"/>
+			<add-attribute value="/assets/js/jquery.min.js"/>
+			<add-attribute value="/assets/js/jquery.etalage.min.js"/>
+			<add-attribute value="/assets/js/jquery.flexisel.js"/>
+			<add-attribute value="/assets/js/nav.js"/>
+			<add-attribute value="/assets/js/responsiveslides.min.js"/>
+
 		</put-list-attribute>
 		
 		<!-- Default FONTS -->
 		<put-list-attribute name="client-fonts">
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
-			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+
 		</put-list-attribute>
 	</definition>
 
@@ -55,4 +40,13 @@
 		
 		<put-attribute name="body" value="/views/client/index.jsp" />
 	</definition>
+	
+	<!-- Product by category -->
+	<definition name="client-category" extends="client-baseLayout">
+		<put-attribute name="title" value="HOME" />
+		
+		<put-attribute name="body" value="/views/client/products.jsp" />
+	</definition>
+
+
 </tiles-definitions>

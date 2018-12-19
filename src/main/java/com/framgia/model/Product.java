@@ -21,10 +21,12 @@ public class Product {
 	private List<Review> reviews = new ArrayList<>();
 	private List<OrderDetail> orderDetails = new ArrayList<>();
 	private List<CartDetail> cartDetails = new ArrayList<>();
+
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Product(Integer id, Category category, String name, float price, String code, String image,
 			String desciption, Date expiryDate, List<Review> reviews, List<OrderDetail> orderDetails,
 			List<CartDetail> cartDetails) {
@@ -41,6 +43,7 @@ public class Product {
 		this.orderDetails = orderDetails;
 		this.cartDetails = cartDetails;
 	}
+
 	public Product(Category category, String name, float price, String code, String image, String desciption,
 			Date expiryDate, List<Review> reviews, List<OrderDetail> orderDetails, List<CartDetail> cartDetails) {
 		super();
@@ -55,71 +58,93 @@ public class Product {
 		this.orderDetails = orderDetails;
 		this.cartDetails = cartDetails;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
+
 	public String getCode() {
 		return code;
 	}
+
 	public void setCode(String code) {
 		this.code = code;
 	}
-	public String getImages() {
-		return image;
-	}
-	public void setImages(String image) {
-		this.image = image;
-	}
+
 	public String getDesciption() {
 		return desciption;
 	}
+
 	public void setDesciption(String desciption) {
 		this.desciption = desciption;
 	}
+
 	public Date getExpiryDate() {
 		return expiryDate;
 	}
+
 	public void setExpiryDate(Date expiryDate) {
 		this.expiryDate = expiryDate;
 	}
+
 	public List<Review> getReviews() {
 		return reviews;
 	}
+
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
 	}
+
 	public List<OrderDetail> getOrderDetails() {
 		return orderDetails;
 	}
+
 	public void setOrderDetails(List<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
+
 	public List<CartDetail> getCartDetails() {
 		return cartDetails;
 	}
+
 	public void setCartDetails(List<CartDetail> cartDetails) {
 		this.cartDetails = cartDetails;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }
