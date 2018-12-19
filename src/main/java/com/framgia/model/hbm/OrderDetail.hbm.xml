@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="orders" class="com.framgia.model.Orders" fetch="select">
+        <many-to-one name="order" class="com.framgia.model.Order" fetch="select">
             <column name="order_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="products" class="com.framgia.model.Products" fetch="select">
+        <many-to-one name="product" class="com.framgia.model.Product" fetch="select">
             <column name="product_id" not-null="true" />
         </many-to-one>
         <property name="productPrice" type="float">

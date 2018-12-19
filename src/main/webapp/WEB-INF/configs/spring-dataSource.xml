@@ -9,7 +9,11 @@
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-
+	<tx:annotation-driven proxy-target-class="true"
+		transaction-manager="transactionManager" />
+	
+	
+	<context:property-placeholder location="classpath:datasources.properties" />
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -40,11 +44,20 @@
 		</property>
 
 		<!-- Load mapping of model and table -->
-		<property name="mappingResource">
+		<property name="mappingResources">
 			<list>
-				<value>/forder_01/src/main/java/com/framgia/model/hbm/User.hbm.xml
-				</value>
-
+			<value>/com/framgia/model/hbm/User.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Address.hbm.xml</value>
+			<value>/com/framgia/model/hbm/CartDetail.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Category.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Order.hbm.xml</value>
+			<value>/com/framgia/model/hbm/OrderDetail.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Payment.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Product.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Review.hbm.xml</value>
+			<value>/com/framgia/model/hbm/ShippingInfo.hbm.xml</value>
+			<value>/com/framgia/model/hbm/Cart.hbm.xml</value>
+			
 			</list>
 		</property>
 
