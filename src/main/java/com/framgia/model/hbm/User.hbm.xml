@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2018 4:21:21 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.framgia.model.Users" table="users" catalog="forder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="15" />
+        </property>
+        <property name="role" type="int">
+            <column name="role" not-null="true" />
+        </property>
+        <list name="orders" table="orders" inverse="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <list-index column="id" base="1"/>
+            <one-to-many class="com.framgia.model.Orders" />
+        </list>
+        <list name="addresses" table="addresses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <list-index column="id" base="1"/>
+            <one-to-many class="com.framgia.model.Addresses" />
+        </list>
+        <list name="carts" table="carts" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" unique="true" />
+            </key>
+            <list-index column="id" base="1"/>
+            <one-to-many class="com.framgia.model.Carts" />
+       </list>
+    </class>
+</hibernate-mapping>
