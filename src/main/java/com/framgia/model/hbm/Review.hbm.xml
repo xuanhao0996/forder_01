@@ -3,12 +3,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 14, 2018 4:21:21 PM by Hibernate Tools 4.3.5.Final -->
 <hibernate-mapping>
-    <class name="com.framgia.model.Reviews" table="reviews" catalog="forder" optimistic-lock="version">
+    <class name="com.framgia.model.Review" table="reviews" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="products" class="com.framgia.model.Products" fetch="select">
+        <many-to-one name="product" class="com.framgia.model.Product" fetch="select">
             <column name="product_id" not-null="true" />
         </many-to-one>
         <property name="name" type="string">

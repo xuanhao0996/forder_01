@@ -31,7 +31,7 @@
                 <column name="shipping_id" not-null="true" />
             </key>
             <list-index column="id" base="1"/>
-            <one-to-many class="com.framgia.model.Orders" />
+            <one-to-many class="com.framgia.model.Order" />
         </list>
     </class>
 </hibernate-mapping>

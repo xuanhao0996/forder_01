@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.framgia</groupId>
-	<artifactId>foder_12</artifactId>
+	<artifactId>forder_01</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>foder_12 Maven Webapp</name>
+	<name>forder_01 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -66,6 +66,13 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>5.1.2.RELEASE</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -210,7 +217,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>foder_12</finalName>
+		<finalName>forder_01</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

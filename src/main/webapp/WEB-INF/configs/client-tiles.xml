@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Base Definition -->
+	<definition name="client-baseLayout" template="/views/client/layout/baseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/client/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
+		
+		<!-- Default CSS -->
+		<put-list-attribute name="client-css">
+			<add-attribute value="/assets/css/bootstrap.css"/>
+			<add-attribute value="/assets/css/creditly.css"/>
+			<add-attribute value="/assets/css/easy-responsive-tabs.css"/>
+			<add-attribute value="/assets/css/flexslider.css"/>
+			<add-attribute value="/assets/css/font-awesome.css"/>
+			<add-attribute value="/assets/css/style.css"/>
+		</put-list-attribute>
+		
+		<!-- Default JS -->
+		<put-list-attribute name="client-js">
+			<add-attribute value="/assets/js/bootstrap.min.js"/>
+			<add-attribute value="/assets/js/counterup.min.js"/>
+			<add-attribute value="/assets/js/creditly.js"/>
+			<add-attribute value="/assets/js/easing.js"/>
+			<add-attribute value="/assets/js/easyResponsiveTabs.js"/>
+			<add-attribute value="/assets/js/jquery.flexslider.js"/>
+			<add-attribute value="/assets/js/jquery.wmuSlider.js"/>
+			<add-attribute value="/assets/js/jquery-1.11.1.min.js"/>
+			<add-attribute value="/assets/js/minicart.js"/>
+			<add-attribute value="/assets/js/move-top.js"/>
+			<add-attribute value="/assets/js/okzoom.js"/>
+			<add-attribute value="/assets/js/waypoints.min.js"/>
+		</put-list-attribute>
+		
+		<!-- Default FONTS -->
+		<put-list-attribute name="client-fonts">
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+			<add-attribute value="/assets/fonts/FontAwesome.otf"/>
+		</put-list-attribute>
+	</definition>
+
+	<!-- Index -->
+	<definition name="client-index" extends="client-baseLayout">
+		<put-attribute name="title" value="HOME" />
+		
+		<put-attribute name="body" value="/views/client/index.jsp" />
+	</definition>
+</tiles-definitions>

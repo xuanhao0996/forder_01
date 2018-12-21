@@ -3,12 +3,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 14, 2018 4:21:21 PM by Hibernate Tools 4.3.5.Final -->
 <hibernate-mapping>
-    <class name="com.framgia.model.Products" table="products" catalog="forder" optimistic-lock="version">
+    <class name="com.framgia.model.Product" table="products" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="categories" class="com.framgia.model.Categories" fetch="select">
+        <many-to-one name="category" class="com.framgia.model.Category" fetch="select">
             <column name="category_id" not-null="true" />
         </many-to-one>
         <property name="name" type="string">
@@ -29,12 +29,12 @@
         <property name="expiryDate" type="date">
             <column name="expiry_date" length="10" />
         </property>
-        <list name="reviewses" table="reviews" inverse="true" fetch="select">
+        <list name="reviews" table="reviews" inverse="true" fetch="select">
             <key>
                 <column name="product_id" not-null="true" />
             </key>
            <list-index base="1" column="id"/>
-            <one-to-many class="com.framgia.model.Reviews" />
+            <one-to-many class="com.framgia.model.Review" />
        </list>
         <list name="orderDetails" table="order_detail" inverse="true" fetch="select">
             <key>
