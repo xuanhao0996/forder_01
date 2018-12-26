@@ -20,7 +20,7 @@
         <property name="code" type="string">
             <column name="code" length="50" />
         </property>
-        <property name="images" type="string">
+        <property name="image" type="string">
             <column name="images" length="1000" />
         </property>
         <property name="desciption" type="string">
