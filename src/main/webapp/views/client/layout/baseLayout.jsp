@@ -55,7 +55,7 @@
 		});
 	</script>
 	<!--slider-script-->
-	<script src="js/responsiveslides.min.js"></script>
+<!-- 	<script src="js/responsiveslides.min.js"></script> -->
 	<script>
 		$(function() {
 			$("#slider1").responsiveSlides({

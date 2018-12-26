@@ -1,32 +1,53 @@
 package com.framgia.service.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
+import com.framgia.bean.ProductInfo;
+import com.framgia.hepler.ConvertProduct;
 import com.framgia.model.Product;
 import com.framgia.service.ProductService;
 
 public class ProductServiceImpl extends BaseServiceImpl implements ProductService {
-	
+
 	@Override
-	public List<Product> getProducts() {
+	public List<ProductInfo> getProducts(int start) {
 		try {
-			return productDAO.getProducts();
+			return ConvertProduct.convertListProductToProductInfo(productDAO.getProducts(start));
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
 		}
-			
+
 	}
 
 	@Override
 	public List<Product> getProductsByCategoryID(Integer id) {
-		
+
 		try {
 			return productDAO.getProductsByCategoryID(id);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 			return null;
 		}
+	}
+
+	@Override
+	public ProductInfo findById(Serializable key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductInfo saveOrUpdate(ProductInfo entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean delete(ProductInfo entity) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
