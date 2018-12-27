@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public interface BaseDAO<PK, T> {
 	
-	void delete(T entity);
+	boolean delete(T entity);
 
 	T saveOrUpdate(T entity);
 

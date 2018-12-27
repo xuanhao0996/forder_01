@@ -1,6 +1,5 @@
 package com.framgia.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.framgia.bean.CategoryInfo;
+import com.framgia.service.CategoryService;
 import com.framgia.service.ProductService;
 
 @Controller
@@ -21,13 +21,15 @@ public class CategoriesController {
 	@Autowired
 	private ProductService productService;
 
+	@Autowired
+	private CategoryService categoryService;
 	
-	@SuppressWarnings("unchecked")
-	@GetMapping(value = "/categories/{id}")
+	@GetMapping(value = "/{id}")
 	public String showCategory(@PathVariable("id") Integer id, Model model, HttpSession httpSession) {
-
-		model.addAttribute("products", productService.getProductsByCategoryID(id));
-		model.addAttribute("products", (List<CategoryInfo>) httpSession.getAttribute("categories"));
+		
+		CategoryInfo categoryInfo = categoryService.getCategoryById(id);
+		model.addAttribute("category", categoryInfo);
+		model.addAttribute("products",productService.getProductsByCategoryID(id));
 
 		return "client-category";
 	}
