@@ -24,8 +24,9 @@ hs_err_pid*
 
 target
 .settings
-
+bin
 *.classpath
 *.settings
 .project
 src/main/resources/datasource.properties
+.tern-project

@@ -15,7 +15,8 @@
 			<add-attribute value="/assets/css/bootstrap.css"/>
 			<add-attribute value="/assets/css/style.css"/>
 			<add-attribute value="/assets/css/etalage.css"/>
-
+			<add-attribute value="/assets/css/pagination.css"/>
+	
 		</put-list-attribute>
 		
 		<!-- Default JS -->
@@ -25,7 +26,7 @@
 			<add-attribute value="/assets/js/jquery.flexisel.js"/>
 			<add-attribute value="/assets/js/nav.js"/>
 			<add-attribute value="/assets/js/responsiveslides.min.js"/>
-
+			<add-attribute value="/assets/js/client-ajax.js"/>
 		</put-list-attribute>
 		
 		<!-- Default FONTS -->
