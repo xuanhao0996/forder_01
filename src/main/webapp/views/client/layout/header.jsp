@@ -1,6 +1,10 @@
+<%@page import="com.framgia.bean.CategoryInfo"%>
+<%@page import="java.util.List"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
 
 <div class="header">
 		<div class="header-top">
@@ -70,11 +74,13 @@
 				<a class="toggleMenu" href="#"><spring:message code="menu" /></a>
 				<ul class="nav">
 					<li class="active"><a href="index.html"><i> </i>Desktops</a></li>
-					<li ><a href="#" ><spring:message code="fruits" /></a>
+
+					<li ><a href="#" >Fruits</a> 
+
 						<ul class="drop">
-						<c:forEach items="${categories}" var="category">
-							<li><a href="${pageContext.request.contextPath}/categories/${category.id}">${category.name}</a></li>
-						</c:forEach>
+							<c:forEach items="${categories}" var="category">
+								<li><a href="${pageContext.request.contextPath}/categories/${category.id}">${category.name}</a></li>
+							</c:forEach>
 						</ul>
 	
 						</li> 						

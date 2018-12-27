@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.framgia.bean.ProductInfo;
 import com.framgia.hepler.ConvertProduct;
-import com.framgia.model.Product;
 import com.framgia.service.ProductService;
 
 public class ProductServiceImpl extends BaseServiceImpl implements ProductService {
@@ -13,7 +12,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	@Override
 	public List<ProductInfo> getProducts(int start) {
 		try {
-			return ConvertProduct.convertListProductToProductInfo(getProductDAO().getProducts(start));
+			return ConvertProduct.convertListProductToProductInfo(productDAO.getProducts());
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
@@ -22,10 +21,12 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	}
 
 	@Override
-	public List<Product> getProductsByCategoryID(Integer id) {
+	public List<ProductInfo> getProductsByCategoryID(Integer id) {
 
 		try {
-			return getProductDAO().getProductsByCategoryID(id);
+			List<ProductInfo> list = ConvertProduct.convertListProductToProductInfo(productDAO.getProductsByCategoryID(id));
+			return list;
+
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;

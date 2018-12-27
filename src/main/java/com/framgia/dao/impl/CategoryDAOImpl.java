@@ -1,12 +1,9 @@
 package com.framgia.dao.impl;
 
-import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.Session;
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.framgia.dao.CategoryDAO;
 import com.framgia.dao.GenericDAO;
@@ -14,33 +11,50 @@ import com.framgia.model.Category;
 
 public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements CategoryDAO {
 	
-	@Autowired
-	private SessionFactory sessionFactory;
+	@SuppressWarnings("unused")
+	private static final Logger logger = Logger.getLogger(CategoryDAOImpl.class);
+
+	public CategoryDAOImpl() {
+		super(Category.class);
+	}
+	
+	public CategoryDAOImpl(SessionFactory sessionFactory) {
+		setSessionFactory(sessionFactory);
+	}
 	
 	@Override
 	public List<Category> getCategories() {
-
-		List<Category> arrCategory = getSession().createQuery("from Category", Category.class).getResultList();
-
-		return arrCategory;
-	}
-
-	@Override
-	public void delete(Category entity) {
-		// TODO Auto-generated method stub
 		
+		return getSession().createQuery("from Category", Category.class).getResultList();
 	}
 
 	@Override
-	public Category saveOrUpdate(Category entity) {
-		// TODO Auto-generated method stub
+	public boolean create(Category object) {
+		return false;
+	}
+
+	@Override
+	public boolean update(Category object) {
+		return false;
+	}
+
+	@Override
+	public boolean delete(Category object) {
+		return false;
+	}
+
+	@Override
+	public Category findById(int categoryId) {
 		return null;
 	}
 
 	@Override
-	public Category findById(Serializable key) {
-		// TODO Auto-generated method stub
-		return null;
+	public Category getCategoryByID(Integer id) {
+		Category category = new Category();
+		category = (Category) getSession().createQuery("FROM "
+				+ "Category WHERE id = :id").setParameter("id", id).getSingleResult();
+		return category;
 	}
 
+	
 }

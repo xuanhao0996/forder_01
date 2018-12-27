@@ -7,7 +7,9 @@
 
 	<div class="container">
 			<div class="products">
-					<h2 class=" products-in"></h2>
+			<h1 class=" products-in">${category.name}</h1>
+					<br>
+					<br>
 					<div class=" top-products">
 					
 					<c:forEach items="${products}" var="product">
