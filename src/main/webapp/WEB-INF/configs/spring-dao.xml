@@ -7,21 +7,32 @@
 	<bean id="CategoryDAO"
 		class="com.framgia.dao.impl.CategoryDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
-	<bean id="ProductDAO"
-		class="com.framgia.dao.impl.ProductDAOImpl">
+	<bean id="ProductDAO" class="com.framgia.dao.impl.ProductDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
-		<bean id="UserDAO"
-		class="com.framgia.dao.impl.UserDAOImpl">
+
+	<bean id="UserDAO" class="com.framgia.dao.impl.UserDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+
+	<bean id="CartDAO" class="com.framgia.dao.impl.CartDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<bean id="CartDetailDAO"
+		class="com.framgia.dao.impl.CartDetailDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
 </beans>

@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.framgia.bean.UserInfo;
 import com.framgia.hepler.ConvertUser;
+import com.framgia.model.UserInfo;
 
 public class LoginSecurityImpl extends BaseServiceImpl implements UserDetailsService {
 	private static final Logger logger = Logger.getLogger(LoginSecurityImpl.class);

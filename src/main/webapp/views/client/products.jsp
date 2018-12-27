@@ -15,7 +15,7 @@
 					<c:forEach items="${products}" var="product">
 						<div class="col-md-3 md-col">
 							<div class="col-md">
-								<a href="single.html" class="compare-in"><img  src="${product.image}" alt="" />	
+								<a href="${pageContext.request.contextPath}/products/${product.id}" class="compare-in"><img  src="${product.image}" alt="" />	
 								<div class="compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>

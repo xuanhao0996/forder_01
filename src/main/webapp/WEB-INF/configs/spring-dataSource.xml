@@ -45,17 +45,17 @@
 		<!-- Load mapping of model and table -->
 		<property name="mappingResources">
 			<list>
-			<value>/com/framgia/model/hbm/User.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Address.hbm.xml</value>
-			<value>/com/framgia/model/hbm/CartDetail.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Category.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Order.hbm.xml</value>
-			<value>/com/framgia/model/hbm/OrderDetail.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Payment.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Product.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Review.hbm.xml</value>
-			<value>/com/framgia/model/hbm/ShippingInfo.hbm.xml</value>
-			<value>/com/framgia/model/hbm/Cart.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/User.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Address.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/CartDetail.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Category.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Order.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/OrderDetail.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Payment.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Product.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Review.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/ShippingInfo.hbm.xml</value>
+			<value>/com/framgia/entity/hbm/Cart.hbm.xml</value>
 			
 			</list>
 		</property>

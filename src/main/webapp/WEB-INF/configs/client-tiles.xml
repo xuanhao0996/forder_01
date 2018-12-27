@@ -53,5 +53,17 @@
 		
 		<put-attribute name="body" value="/views/client/products.jsp" />
 	</definition>
-
+	
+	<!-- Show single product by id -->
+	<definition name="client-single-product" extends="client-baseLayout">
+	<put-attribute name="title" value="SINGLE-PRODUCT" />
+		<put-attribute name="body" value="/views/client/single.jsp"/>
+	</definition>
+	
+	<!-- Show cart -->
+	<definition name="client-cart" extends="client-baseLayout">
+	<put-attribute name="title" value="SINGLE-PRODUCT" />
+		<put-attribute name="body" value="/views/client/carts.jsp"/>
+	</definition>
+	
 </tiles-definitions>

@@ -1,7 +1,7 @@
 package com.framgia.dao;
 
 
-import com.framgia.model.User;
+import com.framgia.entity.User;
 
 public interface UserDAO extends BaseDAO<Integer, User>{
 	 User findByEmail(String email);
