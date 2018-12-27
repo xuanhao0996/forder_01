@@ -11,7 +11,7 @@ public class CategoryServiceImpl extends BaseServiceImpl implements CategoryServ
 	@Override
 	public List<Category> getCategories() {
 
-		return categoryDAO.getCategories();
+		return getCategoryDAO().getCategories();
 	}
 
 	@Override

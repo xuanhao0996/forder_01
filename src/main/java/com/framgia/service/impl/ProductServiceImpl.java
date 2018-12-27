@@ -13,7 +13,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	@Override
 	public List<ProductInfo> getProducts(int start) {
 		try {
-			return ConvertProduct.convertListProductToProductInfo(productDAO.getProducts(start));
+			return ConvertProduct.convertListProductToProductInfo(getProductDAO().getProducts(start));
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
@@ -25,7 +25,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	public List<Product> getProductsByCategoryID(Integer id) {
 
 		try {
-			return productDAO.getProductsByCategoryID(id);
+			return getProductDAO().getProductsByCategoryID(id);
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
