@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.4.201804120850-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/forder_01-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/configs/spring-dataSource.xml</config>
+		<config>src/main/webapp/WEB-INF/configs/applicationContext.xml</config>
+		<config>src/main/webapp/WEB-INF/configs/client-tiles.xml</config>
+		<config>src/main/webapp/WEB-INF/configs/spring-service.xml</config>
+		<config>src/main/webapp/WEB-INF/configs/spring-dao.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

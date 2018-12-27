@@ -49,5 +49,4 @@
 		<put-attribute name="body" value="/views/client/products.jsp" />
 	</definition>
 
-
 </tiles-definitions>
