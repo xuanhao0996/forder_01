@@ -8,19 +8,24 @@
 			<div class="header-top-in">			
 				<div class="logo">
 					<a href="index.html"><img src="/forder_01/assets/images/logo.png" alt=" " ></a>
+					
+					<a href="?lang=en">English </a>
+					 <a href="?lang=vi">Vietnamese</a>
+				
 				</div>
+				
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
-							<li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
-							<li  ><a href="account.html">  MY ACCOUNT</a></li>
-							<li ><a href="#" > SHOPPING CART</a></li>
-							<li > <a href="checkout.html" >CHECKOUT</a> </li>	
+							<li  ><a href="wishlist.html"><spring:message code="list" /> (0)</a> </li>
+							<li  ><a href="account.html"> <spring:message code="account" /></a></li>
+							<li ><a href="#" > <spring:message code="cart" /></a></li>
+							<li > <a href="checkout.html" ><spring:message code="checkout" /></a> </li>	
 							<li><div class="cart">
 									<a href="#" class="cart-in"> </a>
 									<span> 0</span>
 								</div>
 								<ul class="sub-icon1 list">
-						  <h3>Recently added items(2)</h3>
+						  <h3><spring:message code="additems" />(2)</h3>
 						  <div class="shopping_cart">
 							  <div class="cart_box">
 							   	 <div class="message">
@@ -42,12 +47,12 @@
 	                            </div>
 	                        </div>
 	                        <div class="total">
-	                        	<div class="total_left">CartSubtotal : </div>
+	                        	<div class="total_left"><spring:message code="cartsubtotal" /> : </div>
 	                        	<div class="total_right">$250.00</div>
 	                        	<div class="clearfix"> </div>
 	                        </div>
                             <div class="login_buttons">
-							  <div class="check_button"><a href="checkout.html">Check out</a></div>
+							  <div class="check_button"><a href="checkout.html"><spring:message code="checkout" /></a></div>
 							  <div class="clearfix"></div>
 						    </div>
 					      <div class="clearfix"></div>
@@ -62,10 +67,10 @@
 		<div class="header-bottom">
 		<div class="container">
 			<div class="h_menu4">
-				<a class="toggleMenu" href="#">Menu</a>
+				<a class="toggleMenu" href="#"><spring:message code="menu" /></a>
 				<ul class="nav">
 					<li class="active"><a href="index.html"><i> </i>Desktops</a></li>
-					<li ><a href="#" >Fruits</a>
+					<li ><a href="#" ><spring:message code="fruits" /></a>
 						<ul class="drop">
 						<c:forEach items="${categories}" var="category">
 							<li><a href="${pageContext.request.contextPath}/categories/${category.id}">${category.name}</a></li>

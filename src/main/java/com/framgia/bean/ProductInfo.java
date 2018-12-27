@@ -1,6 +1,5 @@
 package com.framgia.bean;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,9 +17,9 @@ public class ProductInfo {
 	private String image;
 	private String desciption;
 	private Date expiryDate;
-	private List<Review> reviews = new ArrayList<>();
-	private List<OrderDetail> orderDetails = new ArrayList<>();
-	private List<CartDetail> cartDetails = new ArrayList<>();
+	private List<Review> reviews;
+	private List<OrderDetail> orderDetails;
+	private List<CartDetail> cartDetails;
 
 	public ProductInfo() {
 	}

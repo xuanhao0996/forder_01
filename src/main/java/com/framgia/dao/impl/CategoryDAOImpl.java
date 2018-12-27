@@ -6,25 +6,22 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.framgia.dao.CategoryDAO;
+import com.framgia.dao.GenericDAO;
 import com.framgia.model.Category;
 
-public class CategoryDAOImpl implements CategoryDAO {
+public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements CategoryDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@Override
 	public List<Category> getCategories() {
-		
-		Session session = sessionFactory.getCurrentSession();
-		Transaction tr = session.beginTransaction();
-		List<Category> arrCategory = session.createQuery("from Category", Category.class).getResultList();
-		tr.commit();
-		session.close();
+
+		List<Category> arrCategory = getSession().createQuery("from Category", Category.class).getResultList();
+
 		return arrCategory;
 	}
 
