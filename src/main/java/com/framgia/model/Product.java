@@ -23,14 +23,17 @@ public class Product {
 	private List<CartDetail> cartDetails = new ArrayList<>();
 
 	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	}
+
+	public Product(Integer id) {
+		this.id = id;
+
 	}
 
 	public Product(Integer id, Category category, String name, float price, String code, String image,
 			String desciption, Date expiryDate, List<Review> reviews, List<OrderDetail> orderDetails,
 			List<CartDetail> cartDetails) {
-		super();
 		this.id = id;
 		this.category = category;
 		this.name = name;

@@ -1,4 +1,4 @@
-<%@page import="com.framgia.bean.CategoryInfo"%>
+<%@page import="com.framgia.model.CategoryInfo"%>
 <%@page import="java.util.List"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -12,10 +12,9 @@
 		<div class="container">
 			<div class="header-top-in">
 				<div class="logo">
-					<a href="index.html"><img
+					<a href="${pageContext.request.contextPath}"><img
 						src="/forder_01/assets/images/logo.png" alt=" "></a> <a
 						href="?lang=en">English </a> | <a href="?lang=vi">Vietnamese</a>
-
 				</div>
 
 				<div class="header-in">
@@ -96,8 +95,11 @@
 			<div class="h_menu4">
 				<a class="toggleMenu" href="#"><spring:message code="menu" /></a>
 				<ul class="nav">
-					<li class="active"><a href="index.html"><i> </i>Desktops</a></li>
-					<li><a href="#"><spring:message code="fruits" /></a>
+
+					<li class="active"><a href="${pageContext.request.contextPath}"><i> </i>HOME</a></li>
+
+					<li ><a href="#" >Fruits</a> 
+
 						<ul class="drop">
 							<c:forEach items="${categories}" var="category">
 								<li><a
@@ -159,8 +161,6 @@
 						</form>
 					</c:otherwise>
 				</c:choose>
-
-
 				<div class="col-md-8 header-can">
 					<ul class="social-in">
 						<li><a href="#"><i class="facebook"> </i></a></li>

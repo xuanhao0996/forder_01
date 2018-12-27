@@ -43,15 +43,16 @@
 			<h3 class="future">FEATURED</h3>
 			<div  class="content-top-in">
 				<div  id="pagination-page">
+				
 				<c:forEach items="${products}" var="product">
 					<div class="col-md-3 md-col">
 						<div class="col-md">
-							<a href="single.html"><img src="${product.image}" alt="" /></a>
+							<a href="${pageContext.request.contextPath}/products/${product.id}"><img src="${product.image}" alt="" /></a>
 							<div class="top-content">
 								<h5><a href="single.html">"${product.name}"</a></h5>
 								<div class="white">
-									<a href="#" data-log="${email }" class="addtoCart hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
-									<p class="dollar"><span class="in-dollar">$</span><span>2</span></p>
+									<a href="${pageContext.request.contextPath}/addToCart/${product.id}"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+									<p class="dollar"><span class="in-dollar">$</span><span>${product.price}</span></p>
 									<div class="clearfix"></div>
 								</div>
 							</div>

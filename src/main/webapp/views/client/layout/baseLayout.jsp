@@ -41,6 +41,7 @@
 		<link rel="stylesheet" href="<c:url value='${item}'/>" type="text/css"
 			media="screen" />
 	</c:forEach>
+	
 	<script type="application/x-javascript">
 		 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 	</script>

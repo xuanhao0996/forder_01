@@ -6,7 +6,7 @@
     <class name="com.framgia.model.Cart" table="carts" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="identity" />
+            <generator class="idmodel" />
         </id>
         <many-to-one name="user" class="com.framgia.model.User" fetch="select">
             <column name="user_id" not-null="true" unique="true" />

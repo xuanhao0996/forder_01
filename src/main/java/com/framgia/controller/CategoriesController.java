@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.framgia.bean.CategoryInfo;
+import com.framgia.model.CategoryInfo;
 import com.framgia.service.CategoryService;
 import com.framgia.service.ProductService;
 

@@ -6,7 +6,7 @@
     <class name="com.framgia.model.ShippingInfo" table="shipping_info" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="identity" />
+            <generator class="idmodel" />
         </id>
         <property name="firstName" type="string">
             <column name="first_name" length="50" />
