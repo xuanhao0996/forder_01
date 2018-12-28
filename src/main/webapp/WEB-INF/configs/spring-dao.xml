@@ -17,4 +17,11 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
+	
+		<bean id="UserDAO"
+		class="com.framgia.dao.impl.UserDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
 </beans>

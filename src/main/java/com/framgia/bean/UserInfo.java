@@ -6,13 +6,13 @@ public class UserInfo {
 	private String password;
 	private String name;
 	private String phone;
-	private int role;
+	private String role;
 	
 	public UserInfo() {
 		
 	}
 
-	public UserInfo(String email, String password, String name, String phone, int role) {
+	public UserInfo(String email, String password, String name, String phone, String role) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -21,7 +21,7 @@ public class UserInfo {
 		this.role = role;
 	}
 
-	public UserInfo(Integer id, String email, String password, String name, String phone, int role) {
+	public UserInfo(Integer id, String email, String password, String name, String phone, String role) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -71,11 +71,11 @@ public class UserInfo {
 		this.phone = phone;
 	}
 
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
 
-	public void setRole(int role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	

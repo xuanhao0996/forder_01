@@ -11,11 +11,26 @@
 			</bean>
 		</property>
 	</bean>
-	
+
 	<bean id="CategoryService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="com.framgia.service.impl.CategoryServiceImpl">
 				<property name="categoryDAO" ref="CategoryDAO" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="UserService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.framgia.service.impl.UserServiceImpl">
+				<property name="userDAO" ref="UserDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="loginSecurity" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.framgia.service.impl.LoginSecurityImpl">
+				<property name="userDAO" ref="UserDAO" />
 			</bean>
 		</property>
 	</bean>
