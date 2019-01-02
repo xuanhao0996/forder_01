@@ -26,6 +26,9 @@ public class HomeController extends BaseController {
 		if(request.getUserPrincipal() != null) {
 			Principal principal = request.getUserPrincipal();
 			model.addAttribute("email", principal.getName());
+			model.addAttribute("alertLogin","success");
+		}else {
+			model.addAttribute("alertLogin","err");
 		}
 		
 		model.addAttribute("products", productService.getProducts(0));

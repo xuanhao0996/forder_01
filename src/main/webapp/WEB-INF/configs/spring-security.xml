@@ -8,7 +8,7 @@
     
       <form-login login-page="/login" login-processing-url="/j_spring_security_login"
        username-parameter="username" password-parameter="password" default-target-url="/"
-      authentication-failure-url="/index?error" />
+      authentication-failure-url="/index" />
     
     <logout logout-url="/j_spring_security_logout"
       logout-success-url="/index" delete-cookies="JSESSIONID" />

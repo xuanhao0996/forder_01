@@ -50,7 +50,7 @@
 							<div class="top-content">
 								<h5><a href="single.html">"${product.name}"</a></h5>
 								<div class="white">
-									<a href="single.html"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+									<a href="#" data-log="${email }" class="addtoCart hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
 									<p class="dollar"><span class="in-dollar">$</span><span>2</span></p>
 									<div class="clearfix"></div>
 								</div>

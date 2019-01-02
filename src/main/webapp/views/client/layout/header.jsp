@@ -5,6 +5,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<spring:url value="/assets/alertify/js/alertifyLog.js" var="alertifyLog"/>
 
 <div class="header">
 	<div class="header-top">
@@ -118,7 +119,7 @@
 	<div class="header-bottom-in">
 		<div class="container">
 			<div class="header-bottom-on">
-
+			<input value=" ${email}" type="hidden" id="emailLogin">
 				<c:choose>
 					<c:when test="${email != null }">
 						<h5>Welcome: ${email}</h5>
@@ -141,7 +142,7 @@
 									<td><input type='password' name='password' /></td>
 								</tr>
 								<tr>
-									<td colspan='2'><input name="submit" type="submit"
+									<td id="confirmLogin" colspan='2'><input name="submit" type="submit"
 										value="login" /></td>
 								</tr>
 							</table>
@@ -180,3 +181,5 @@
 		</div>
 	</div>
 </div>
+<div hidden id="messageLogin" >${alertLogin}</div>
+<script src="${alertifyLog }"></script>

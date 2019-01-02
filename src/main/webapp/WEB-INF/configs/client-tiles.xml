@@ -16,6 +16,9 @@
 			<add-attribute value="/assets/css/style.css"/>
 			<add-attribute value="/assets/css/etalage.css"/>
 			<add-attribute value="/assets/css/pagination.css"/>
+			<add-attribute value="/assets/alertify/themes/alertify.core.css"/>
+			<add-attribute value="/assets/alertify/themes/alertify.bootstrap.css"/>
+			<add-attribute value="/assets/alertify/themes/alertify.default.css"/>
 	
 		</put-list-attribute>
 		
@@ -27,6 +30,8 @@
 			<add-attribute value="/assets/js/nav.js"/>
 			<add-attribute value="/assets/js/responsiveslides.min.js"/>
 			<add-attribute value="/assets/js/client-ajax.js"/>
+			<add-attribute value="/assets/alertify/js/alertify.min.js"/>
+			
 		</put-list-attribute>
 		
 		<!-- Default FONTS -->
