@@ -7,7 +7,7 @@ $(document).ready(function() {
 					 html +='<a href="single.html"><img src='+value[i].image+' alt="" /></a><div class="top-content">';
 					html +='<h5><a href="single.html">'+value[i].name+'</a></h5>';
 					html +='<div class="white">';
-					html +='<a href="single.html"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>';
+					html +='<a href="#" class="addtoCart hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>';
 					html +='<p class="dollar"><span class="in-dollar">$</span><span>'+value[i].price+'</span></p>';
 					html +='<div class="clearfix"></div>';
 				    html +='</div></div></div></div></div>';
@@ -81,4 +81,6 @@ $(document).ready(function() {
 		 }
 		 return false;
 	 })
+
+	 
 });

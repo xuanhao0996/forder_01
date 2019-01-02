@@ -18,8 +18,11 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 	}
 	
 	@Override
-	public List<Product> getProducts() {
+	public List<Product> getProducts(int start) {
+		if(start<0) {
 		return getSession().createQuery("FROM Product", Product.class).getResultList();
+			}
+		return getSession().createQuery("FROM Product", Product.class).setFirstResult(start).setMaxResults(4).getResultList();
 	}
 
 	@Override
