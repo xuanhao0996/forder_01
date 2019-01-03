@@ -13,4 +13,12 @@ public class UserDAOImpl extends GenericDAO<Integer, User> implements UserDAO {
 				.uniqueResult();
 	}
 
+	@Override
+	public User findByEmailAndPassword(String email, String password) {
+		logger.info("email: " + email);
+		return getSession().createQuery("from User user where email = :email and password = :password", User.class)
+				.setParameter("email", email).setParameter("password", password)
+				.getSingleResult();
+	}
+
 }

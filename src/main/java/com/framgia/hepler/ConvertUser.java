@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import com.framgia.bean.UserInfo;
 import com.framgia.model.User;
 
 public class ConvertUser {
+	
+	
+	static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	static Function<User, UserInfo> userToUserInfo = (User user) -> {
 		UserInfo info = new UserInfo();
 		info.setId(user.getId());
@@ -35,5 +41,26 @@ public class ConvertUser {
 
 	public static UserInfo convertSingleUserToUserInfo(User user) {
 		return userToUserInfo.apply(user);
+	}
+
+	static Function<UserInfo, User> userInfoToUser = (UserInfo userInfo) -> {
+		User user = new User();
+		
+		user.setName(userInfo.getName());
+		user.setEmail(userInfo.getEmail());
+		user.setPassword(passwordEncoder.encode(userInfo.getPassword()));
+		user.setPhone(userInfo.getPhone());
+		String role = userInfo.getRole();
+		if (role.equals(ROLES.USER.toString())) {
+			user.setRole(0);
+		} else {
+			user.setRole(1);
+		}
+
+		return user;
+	};
+	
+	public static User convertSingleUserInfoToUser(UserInfo info) {
+		return userInfoToUser.apply(info);
 	}
 }
