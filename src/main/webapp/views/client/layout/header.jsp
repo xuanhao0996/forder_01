@@ -129,6 +129,14 @@
 								value="${_csrf.token}" /> <input type="submit" value="Logout" />
 						</form>
 					</c:when>
+					<c:when test="${userSession != null }">
+						<h5>Welcome: ${userSession.email}</h5>
+						<form action="<c:url value="/j_spring_security_logout" />"
+							method="post">
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" /> <input type="submit" value="Logout" />
+						</form>
+					</c:when>
 					<c:otherwise>
 						<form class="col-md-4" name='loginForm'
 							action="<c:url value='j_spring_security_login' />" method='POST'>
@@ -157,7 +165,8 @@
 					<ul class="social-in">
 						<li><a href="#"><i class="facebook"> </i></a></li>
 						<li><a href="#"><i class="twitter"> </i></a></li>
-						<li><a href="#"><i class="email"> </i></a></li>
+						
+						<li><a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8083/forder_01/login-google&response_type=code&client_id=650605713330-9s9j72fd23vgfqdlc380mh0re75mj7cm.apps.googleusercontent.com&approval_prompt=force">Gmail</a></li>
 					</ul>
 					<div class="down-top">
 						<select class="in-drop">

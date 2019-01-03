@@ -13,10 +13,15 @@
     <logout logout-url="/j_spring_security_logout"
       logout-success-url="/index" delete-cookies="JSESSIONID" />
   </http>
+  
+  <beans:bean id="encoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+  
   <authentication-manager>
     <authentication-provider user-service-ref="loginSecurity">
-      <password-encoder hash="bcrypt"/>
+      <password-encoder ref="encoder" />
     </authentication-provider>
   </authentication-manager>
 
+                
 </beans:beans>
