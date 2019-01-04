@@ -15,6 +15,10 @@ public class ProductInfo {
 
 	public ProductInfo() {
 	}
+	
+	public ProductInfo(Integer id) {
+		this.id = id;
+	}
 
 	public ProductInfo(Integer id, CategoryInfo category, String name, float price, String code, String image,
 			String desciption, Date expiryDate) {

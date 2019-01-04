@@ -3,8 +3,8 @@ package com.framgia.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
-import com.framgia.bean.CategoryInfo;
 import com.framgia.hepler.ConvertCategory;
+import com.framgia.model.CategoryInfo;
 import com.framgia.service.CategoryService;
 
 public class CategoryServiceImpl extends BaseServiceImpl implements CategoryService {

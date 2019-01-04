@@ -14,47 +14,59 @@ public class Cart {
 	private User user;
 	private Integer status;
 	private List<CartDetail> cartDetails = new ArrayList<CartDetail>();
+
 	public Cart() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
+
+	public Cart(Integer id) {
+		this.id = id;
+	}
+
 	public Cart(Integer id, User user, Integer status, List<CartDetail> cartDetails) {
-		super();
 		this.id = id;
 		this.user = user;
 		this.status = status;
 		this.cartDetails = cartDetails;
 	}
+
 	public Cart(User user, Integer status, List<CartDetail> cartDetails) {
 		super();
 		this.user = user;
 		this.status = status;
 		this.cartDetails = cartDetails;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
+
 	public Integer getStatus() {
 		return status;
 	}
+
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+
 	public List<CartDetail> getCartDetails() {
 		return cartDetails;
 	}
+
 	public void setCartDetails(List<CartDetail> cartDetails) {
 		this.cartDetails = cartDetails;
 	}
 
-	
 }

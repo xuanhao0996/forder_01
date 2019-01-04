@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 
-import com.framgia.bean.CategoryInfo;
-import com.framgia.model.Category;
+import com.framgia.entity.Category;
+import com.framgia.model.CategoryInfo;
 
 public class ConvertCategory {
 

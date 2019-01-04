@@ -1,7 +1,8 @@
 package com.framgia.service;
 
 import java.util.List;
-import com.framgia.bean.CategoryInfo;
+
+import com.framgia.model.CategoryInfo;
 
 public interface CategoryService extends BaseService<Integer, CategoryInfo> {
 	

@@ -4,7 +4,7 @@
     
 	<div class="container">
 		<div class="account">
-			<h2 class="account-in">Account</h2>
+			<h2 class="account-in">Login</h2>
 				<form>
 				<div>
 					<span>Email*</span>

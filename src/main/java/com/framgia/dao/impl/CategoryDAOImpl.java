@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 
 import com.framgia.dao.CategoryDAO;
 import com.framgia.dao.GenericDAO;
-import com.framgia.model.Category;
+import com.framgia.entity.Category;
 
 public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements CategoryDAO {
 	

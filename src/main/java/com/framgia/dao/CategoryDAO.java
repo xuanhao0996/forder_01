@@ -2,7 +2,7 @@ package com.framgia.dao;
 
 import java.util.List;
 
-import com.framgia.model.Category;
+import com.framgia.entity.Category;
 
 public interface CategoryDAO extends BaseDAO<Integer, Category> {
 	
