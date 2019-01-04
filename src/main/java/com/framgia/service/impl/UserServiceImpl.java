@@ -1,4 +1,4 @@
-package com.framgia.service.impl;
+/*package com.framgia.service.impl;
 
 import java.io.Serializable;
 
@@ -56,3 +56,4 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 		}
 	}
 }
+*/

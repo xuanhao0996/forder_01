@@ -2,10 +2,10 @@ package com.framgia.dao;
 
 import java.util.List;
 
-import com.framgia.entity.Cart;
-import com.framgia.entity.CartDetail;
-import com.framgia.entity.Product;
-import com.framgia.entity.User;
+import com.framgia.model.Cart;
+import com.framgia.model.CartDetail;
+import com.framgia.model.Product;
+import com.framgia.model.User;
 
 public interface CartDAO extends BaseDAO<Integer, Cart> {
 	Cart getCartByUserId(Integer id);

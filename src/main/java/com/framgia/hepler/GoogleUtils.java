@@ -1,4 +1,4 @@
-package com.framgia.hepler;
+/*package com.framgia.hepler;
 
 import java.io.IOException;
 
@@ -42,3 +42,4 @@ import com.framgia.bean.GoogleInfo;
 		}
 	}
 
+*/

@@ -1,4 +1,4 @@
-package com.framgia.service;
+/*package com.framgia.service;
 
 import com.framgia.entity.User;
 import com.framgia.model.UserInfo;
@@ -9,3 +9,4 @@ public interface UserService extends BaseService<Integer, User> {
 	UserInfo findByEmail(String email);
 
 }
+*/

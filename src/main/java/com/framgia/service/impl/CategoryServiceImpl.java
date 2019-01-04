@@ -3,48 +3,66 @@ package com.framgia.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
+import com.framgia.bean.CategoryInfo;
 import com.framgia.hepler.ConvertCategory;
-import com.framgia.model.CategoryInfo;
 import com.framgia.service.CategoryService;
 
 public class CategoryServiceImpl extends BaseServiceImpl implements CategoryService {
 
+	private static final Logger logger = Logger.getLogger(CategoryServiceImpl.class);
+	
 	@Override
-	public List<CategoryInfo> getCategories() {
+	public CategoryInfo findByName(String categoryName) {
 		try {
-			return ConvertCategory.convertListCategoryToListCategoryInfo(categoryDAO.getCategories());
+			return ConvertCategory.categoryToCategoryInfo(categoryDAO.findByName(categoryName));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
+			return null;
 		}
-		return null;
+	}
+
+	@Override
+	public List<CategoryInfo> getAll() {
+		try {
+			return ConvertCategory.listCategoryToCategoryInfo(categoryDAO.getAll());
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
 	public CategoryInfo findById(Serializable key) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return ConvertCategory.categoryToCategoryInfo(categoryDAO.findById(key));
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
 	public CategoryInfo saveOrUpdate(CategoryInfo entity) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return ConvertCategory.
+					categoryToCategoryInfo(categoryDAO.saveOrUpdate(ConvertCategory
+							.categoryInfoToCategory(entity)));
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
 	public boolean delete(CategoryInfo entity) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public CategoryInfo getCategoryById(Integer id) {
 		try {
-			return ConvertCategory.convertCategoryToCategoryInfo(categoryDAO.getCategoryByID(id));
+			getCategoryDAO().delete(ConvertCategory.categoryInfoToCategory(entity));
+			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw e;
 		}
-		return null;
 	}
-
+	
 }

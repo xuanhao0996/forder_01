@@ -1,4 +1,3 @@
-<%@page import="com.framgia.model.CategoryInfo"%>
 <%@page import="java.util.List"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

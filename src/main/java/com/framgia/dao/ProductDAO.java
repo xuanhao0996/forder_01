@@ -2,7 +2,7 @@ package com.framgia.dao;
 
 import java.util.List;
 
-import com.framgia.entity.Product;
+import com.framgia.model.Product;
 
 public interface ProductDAO extends BaseDAO<Integer, Product>{
 	//get all product

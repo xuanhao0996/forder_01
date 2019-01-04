@@ -1,28 +1,9 @@
 package com.framgia.controller.clients;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import com.framgia.model.CartDetailInfo;
-import com.framgia.model.CartInfo;
-import com.framgia.model.ProductInfo;
-import com.framgia.model.UserInfo;
-import com.framgia.service.CartService;
-import com.framgia.service.ProductService;
-import com.framgia.service.UserService;
-
-@Controller
+/*@Controller*/
 public class CartController {
 
-	@Autowired
+/*	@Autowired
 	private CartService cartService;
 
 	@Autowired
@@ -84,8 +65,8 @@ public class CartController {
 		
 		//List<CartDetailInfo> cartDetailInfos = cartService.findCartDetailsByUserId(userInfo.getId());
 		
-		model.addAttribute("cartDetails", cartDetailInfos);
-		model.addAttribute("products", productInfos);
+		bean.addAttribute("cartDetails", cartDetailInfos);
+		bean.addAttribute("products", productInfos);
 		return "client-cart";
 	}
 
@@ -118,6 +99,6 @@ public class CartController {
 		}
 		
 		return cartDetailInfo;
-	}
+	}*/
 
 }

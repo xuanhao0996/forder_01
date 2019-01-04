@@ -1,11 +1,7 @@
-package com.framgia.service;
+/*package com.framgia.service;
 
 import java.util.List;
 
-import com.framgia.model.CartDetailInfo;
-import com.framgia.model.CartInfo;
-import com.framgia.model.ProductInfo;
-import com.framgia.model.UserInfo;
 
 public interface CartService extends BaseService<Integer, CartInfo> {
 
@@ -24,3 +20,4 @@ public interface CartService extends BaseService<Integer, CartInfo> {
 	public List<CartDetailInfo> findCartDetailsByUserId(Integer id);
 
 }
+*/
