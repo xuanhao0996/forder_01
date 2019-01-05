@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.framgia.bean.CategoryInfo;
-
 @Controller
 public class HomeController extends BaseController {
 	
@@ -16,8 +14,12 @@ public class HomeController extends BaseController {
 	public ModelAndView index() {
 		logger.info("home page");
 		ModelAndView model = new ModelAndView("home");
-		model.addObject("category", new CategoryInfo());
+		//model.addObject("category", new CategoryInfo());
+		//add list category
 		model.addObject("categories", categoryService.getAll());
+		
+		//add list product
+		model.addObject("products", productService.getAll());
 		return model;
 	}
 	/*@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)

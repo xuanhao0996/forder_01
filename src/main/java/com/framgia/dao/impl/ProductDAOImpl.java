@@ -1,11 +1,11 @@
-/*package com.framgia.dao.impl;
+package com.framgia.dao.impl;
 
 import java.util.List;
 
 import org.hibernate.SessionFactory;
 import com.framgia.dao.GenericDAO;
 import com.framgia.dao.ProductDAO;
-import com.framgia.entity.Product;
+import com.framgia.model.Product;
 
 public class ProductDAOImpl extends GenericDAO<Integer, Product> implements ProductDAO {
 
@@ -18,6 +18,19 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 	}
 	
 	@Override
+	public Product findByName(String productName) {
+		return (Product) getSession().createQuery("FROM Product WHERE name = ?")
+									.setParameter(0, productName).getSingleResult();
+
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> getAll() {
+		return getSession().createQuery("FROM Product").getResultList();
+	}
+	
+	/*@Override
 	public List<Product> getProductsByCategoryID(Integer id) {
 		List<Product> list = getSession().createQuery("SELECT p FROM Product p "
 				+ "INNER JOIN Category c ON p.category.id = c.id "
@@ -42,7 +55,6 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 			return getSession().createQuery("FROM Product", Product.class).getResultList();
 				}
 			return getSession().createQuery("FROM Product", Product.class).setFirstResult(start).setMaxResults(4).getResultList();
-	}
+	}*/
 		
 }
-*/

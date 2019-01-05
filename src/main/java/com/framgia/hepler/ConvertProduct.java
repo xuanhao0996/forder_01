@@ -1,4 +1,4 @@
-/*package com.framgia.hepler;
+package com.framgia.hepler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.function.Function;
 
 import org.springframework.beans.BeanUtils;
 
-import com.framgia.entity.Product;
-import com.framgia.model.ProductInfo;
+import com.framgia.bean.ProductInfo;
+import com.framgia.model.Product;
 
 public class ConvertProduct {
 	static Function<Product, ProductInfo> convertProductToProductInfo = (Product p) -> {
@@ -19,7 +19,7 @@ public class ConvertProduct {
 		return pInfo;
 	};
 	
-	public static ProductInfo convertProductToProductInfoVersionByBeanUtils(Product product) {
+	public static ProductInfo productToProductInfo(Product product) {
 		ProductInfo productInfo = new ProductInfo();
 		BeanUtils.copyProperties(product, productInfo);
 		return productInfo;
@@ -32,5 +32,10 @@ public class ConvertProduct {
 		}
 		return arr;
 	}
+
+	public static Product productInfoToProduct(ProductInfo entity) {
+		Product product = new Product();
+		BeanUtils.copyProperties(entity, product);
+		return product;
+	}
 }
-*/
