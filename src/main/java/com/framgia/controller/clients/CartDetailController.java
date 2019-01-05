@@ -7,4 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/cartDetail")
 public class CartDetailController {
 
+	public String showCartDetail() {
+		return "redirect:/";
+	}
 }

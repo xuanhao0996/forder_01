@@ -1,6 +1,8 @@
 package com.framgia.service.impl;
 
 import java.io.Serializable;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.framgia.bean.CartInfo;
@@ -36,9 +38,9 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 	}
 
 	@Override
-	public CartInfo findByUserId(Integer userId) {
+	public List<CartInfo> findByUserId(Integer userId) {
 		try {
-			return ConvertCart.cartToCartInfo((cartDAO.findByUserId(userId)));
+			return ConvertCart.listCartToListCartInfo(cartDAO.findByUserId(userId));
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			return null;

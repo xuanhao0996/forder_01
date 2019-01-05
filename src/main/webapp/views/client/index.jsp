@@ -51,7 +51,7 @@
 							<div class="top-content">
 								<h5><a href="single.html">"${product.name}"</a></h5>
 								<div class="white">
-									<a href="${pageContext.request.contextPath}/addToCart/${product.id}"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+									<a href="${pageContext.request.contextPath}/cart/${product.id}"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
 									<p class="dollar"><span class="in-dollar">$</span><span>${product.price}</span></p>
 									<div class="clearfix"></div>
 								</div>
@@ -138,7 +138,7 @@
 										<a href="single.html">"${product.name}"</a>
 									</h5>
 									<div class="white">
-										<a href="single.html"
+										<a href="${pageContext.request.contextPath}/cart/${product.id}"
 											class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD
 											TO CART</a>
 										<p class="dollar">

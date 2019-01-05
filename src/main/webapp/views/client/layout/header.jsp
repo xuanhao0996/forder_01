@@ -25,8 +25,10 @@
 						<li><a href="#"> <spring:message code="cart" /></a></li>
 						<li><a href="checkout.html"><spring:message
 									code="checkout" /></a></li>
-						<li><div class="cart">
-								<a href="#" class="cart-in"> </a> <span> 0</span>
+						<li>
+						<div class="cart">
+								<a href="#" class="cart-in"> </a>
+								 <span> <c:out value="${sessionScope.countProduct}"/></span>
 							</div>
 							<ul class="sub-icon1 list">
 								<h3>

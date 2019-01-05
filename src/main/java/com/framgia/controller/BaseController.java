@@ -2,6 +2,7 @@ package com.framgia.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.framgia.service.CartDetailService;
 import com.framgia.service.CartService;
 import com.framgia.service.CategoryService;
 import com.framgia.service.ProductService;
@@ -22,4 +23,7 @@ public class BaseController {
 	
 	@Autowired
 	protected CartService cartService;
+	
+	@Autowired
+	protected CartDetailService cartDetailService;
 }
