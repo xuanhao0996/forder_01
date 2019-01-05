@@ -3,14 +3,15 @@ package com.framgia.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.framgia.service.CategoryService;
+import com.framgia.service.ProductService;
 public class BaseController {
 	@Autowired
 	protected CategoryService categoryService;
 	
-/*	@Autowired
+	@Autowired
 	protected ProductService productService;
 	
-	@Autowired
+	/*@Autowired
 	protected GoogleUtils googleUtils;
 	
 	@Autowired

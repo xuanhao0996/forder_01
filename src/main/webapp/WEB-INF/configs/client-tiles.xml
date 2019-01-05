@@ -40,7 +40,7 @@
 		</put-list-attribute>
 	</definition>
 
-	<!-- Index -->
+	<!-- home -->
 	<definition name="home" extends="client-baseLayout">
 		<put-attribute name="title" value="HOME" />
 		
