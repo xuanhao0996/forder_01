@@ -1,6 +1,7 @@
 package com.framgia.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 import com.framgia.dao.CartDAO;
 import com.framgia.dao.GenericDAO;
 import com.framgia.model.Cart;
@@ -26,13 +27,13 @@ public class CartDAOImpl extends GenericDAO<Integer, Cart> implements CartDAO {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Cart findByUserId(Integer userId) {
-		return (Cart) getSession().createQuery("SELECT c FROM Cart "
-										+ "WHERE c.user.id = :userId "
-										+ "AND c.status = 0")
+	public List<Cart> findByUserId(Integer userId) {
+		return getSession().createQuery("SELECT c FROM Cart c "
+										+ "WHERE c.user.id = :userId")
 										.setParameter("userId", userId)
-										.getSingleResult();
+										.getResultList();
 	}
 
 	@Override
