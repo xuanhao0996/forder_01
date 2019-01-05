@@ -1,8 +1,8 @@
-/*apackage com.framgia.dao.impl;
+package com.framgia.dao.impl;
 
 import com.framgia.dao.GenericDAO;
 import com.framgia.dao.UserDAO;
-import com.framgia.entity.User;
+import com.framgia.model.User;
 
 public class UserDAOImpl extends GenericDAO<Integer, User> implements UserDAO {
 
@@ -23,4 +23,3 @@ public class UserDAOImpl extends GenericDAO<Integer, User> implements UserDAO {
 	}
 
 }
-*/

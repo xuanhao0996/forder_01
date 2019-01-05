@@ -1,4 +1,4 @@
-/*package com.framgia.service.impl;
+package com.framgia.service.impl;
 
 import java.io.Serializable;
 
@@ -6,9 +6,9 @@ import org.apache.log4j.Logger;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.framgia.entity.User;
+import com.framgia.bean.UserInfo;
 import com.framgia.hepler.ConvertUser;
-import com.framgia.model.UserInfo;
+import com.framgia.model.User;
 import com.framgia.service.UserService;
 
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
@@ -56,4 +56,3 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 		}
 	}
 }
-*/

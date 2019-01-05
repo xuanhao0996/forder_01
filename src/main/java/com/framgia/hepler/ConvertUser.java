@@ -1,4 +1,4 @@
-/*package com.framgia.hepler;
+package com.framgia.hepler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.function.Function;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.framgia.entity.User;
-import com.framgia.model.UserInfo;
+import com.framgia.bean.UserInfo;
+import com.framgia.model.User;
 
 public class ConvertUser {
 
@@ -61,4 +61,3 @@ public class ConvertUser {
 		return userInfoToUser.apply(info);
 	}
 }
-*/

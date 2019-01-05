@@ -16,10 +16,10 @@
 						<div class="col-md-3 md-col">
 							<div class="col-md">
 								<a href="${pageContext.request.contextPath}/products/${product.id}" class="compare-in"><img  src="${product.image}" alt="" />	
-								<div class="compare">
+								<!-- <div class="compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>
-								</div>
+								</div> -->
 								</a>
 								<div class="top-content">
 									<h5><a href="single.html">"${product.name}"</a></h5>

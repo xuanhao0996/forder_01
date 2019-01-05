@@ -25,7 +25,7 @@ public class ConvertProduct {
 		return productInfo;
 	}
 	
-	public static List<ProductInfo> convertListProductToProductInfo(List<Product> lProduct) {
+	public static List<ProductInfo> listProToProInfo(List<Product> lProduct) {
 		List<ProductInfo> arr = new ArrayList<>();
 		for (Product p : lProduct) {
 			arr.add(convertProductToProductInfo.apply(p));

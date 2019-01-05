@@ -1,4 +1,4 @@
-/*package com.framgia.service.impl;
+package com.framgia.service.impl;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.framgia.bean.UserInfo;
 import com.framgia.hepler.ConvertUser;
-import com.framgia.model.UserInfo;
 
 public class LoginSecurityImpl extends BaseServiceImpl implements UserDetailsService {
 	private static final Logger logger = Logger.getLogger(LoginSecurityImpl.class);
@@ -39,4 +39,3 @@ public class LoginSecurityImpl extends BaseServiceImpl implements UserDetailsSer
 
 
 }
-*/

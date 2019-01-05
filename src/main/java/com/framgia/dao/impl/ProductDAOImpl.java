@@ -29,14 +29,17 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 	public List<Product> getAll() {
 		return getSession().createQuery("FROM Product").getResultList();
 	}
-	
-	/*@Override
-	public List<Product> getProductsByCategoryID(Integer id) {
-		List<Product> list = getSession().createQuery("SELECT p FROM Product p "
-				+ "INNER JOIN Category c ON p.category.id = c.id "
-				+ "where c.id = :id", Product.class).setParameter("id", id).getResultList();
-		return list;
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> findByCategoryId(Integer id) {
+		return getSession().createQuery("SELECT p FROM Product p "
+										+ "WHERE p.category.id = :id")
+										.setParameter("id", id)
+										.getResultList();
 	}
+	
+	/*
 
 	@Override
 	public Product getProductsById(Integer id) {

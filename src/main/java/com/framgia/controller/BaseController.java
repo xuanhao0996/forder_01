@@ -2,8 +2,11 @@ package com.framgia.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.framgia.service.CartService;
 import com.framgia.service.CategoryService;
 import com.framgia.service.ProductService;
+import com.framgia.service.UserService;
+
 public class BaseController {
 	@Autowired
 	protected CategoryService categoryService;
@@ -13,8 +16,10 @@ public class BaseController {
 	
 	/*@Autowired
 	protected GoogleUtils googleUtils;
+	*/
+	@Autowired
+	protected UserService userService;
 	
 	@Autowired
-	protected UserService userService;*/
-	
+	protected CartService cartService;
 }

@@ -11,4 +11,6 @@ public interface ProductService extends BaseService<Integer, ProductInfo> {
  
     // load list category
     List<ProductInfo> getAll();
+
+	List<ProductInfo> findByCategoryId(Integer id);
 }

@@ -1,7 +1,7 @@
-/*package com.framgia.service;
+package com.framgia.service;
 
-import com.framgia.entity.User;
-import com.framgia.model.UserInfo;
+import com.framgia.bean.UserInfo;
+import com.framgia.model.User;
 
 public interface UserService extends BaseService<Integer, User> {
 	UserInfo findByEmailAndPassword(String email, String password);
@@ -9,4 +9,3 @@ public interface UserService extends BaseService<Integer, User> {
 	UserInfo findByEmail(String email);
 
 }
-*/

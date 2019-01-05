@@ -5,9 +5,9 @@
 
 <div class="banner-mat">
 	<div class="container">
-		<div class="banner">
+		<!-- <div class="banner">
 
-			<!-- Slideshow 4 -->
+			Slideshow 4
 			<div class="slider">
 				<ul class="rslides" id="slider1">
 					<li><img src="/forder_01/assets/images/banner.jpg" alt="">
@@ -32,7 +32,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-		</div>
+		</div> -->
 		<!-- //slider-->
 	</div>
 </div>
@@ -121,7 +121,7 @@
 		</div>
 		<!---->
 		<div class="content-bottom">
-			<h3 class="future">LATEST</h3>
+			<h3 class="future">New Products</h3>
 			<div class="content-bottom-in">
 
 
