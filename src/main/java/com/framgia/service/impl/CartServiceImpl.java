@@ -1,20 +1,18 @@
-package com.framgia.service.impl;
+/*package com.framgia.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.framgia.entity.Cart;
-import com.framgia.entity.CartDetail;
-import com.framgia.entity.Product;
+import com.framgia.model.Cart;
+import com.framgia.model.CartDetail;
+import com.framgia.model.Product;
+import com.framgia.bean.CartDetailInfo;
+import com.framgia.bean.CartInfo;
 import com.framgia.hepler.ConvertCart;
 import com.framgia.hepler.ConvertProduct;
 import com.framgia.hepler.ConvertUser;
-import com.framgia.model.CartDetailInfo;
-import com.framgia.model.CartInfo;
-import com.framgia.model.ProductInfo;
-import com.framgia.model.UserInfo;
 import com.framgia.service.CartService;
 
 public class CartServiceImpl extends BaseServiceImpl implements CartService {
@@ -36,12 +34,12 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 	}
 
 	@Override
-	public CartInfo saveOrUpdate(CartInfo entity) {
+	public CartInfo saveOrUpdate(CartInfo model) {
 		return null;
 	}
 
 	@Override
-	public boolean delete(CartInfo entity) {
+	public boolean delete(CartInfo model) {
 		return false;
 	}
 
@@ -116,7 +114,7 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 	@Override
 	public List<CartDetailInfo> findCartDetailsByUserId(Integer id) {
 		try {
-		/*	return List<CartDetailInfo> list = cartDetailDAO.findCartDetailsByUserId(id);*/
+			return List<CartDetailInfo> list = cartDetailDAO.findCartDetailsByUserId(id);
 			return null;
 		}catch (Exception e) {
 			logger.error(e.getMessage());
@@ -125,3 +123,4 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 	}
 
 }
+*/

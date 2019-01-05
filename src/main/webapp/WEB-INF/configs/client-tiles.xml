@@ -41,7 +41,7 @@
 	</definition>
 
 	<!-- Index -->
-	<definition name="client-index" extends="client-baseLayout">
+	<definition name="home" extends="client-baseLayout">
 		<put-attribute name="title" value="HOME" />
 		
 		<put-attribute name="body" value="/views/client/index.jsp" />

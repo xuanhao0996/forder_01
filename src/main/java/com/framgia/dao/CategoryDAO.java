@@ -2,23 +2,14 @@ package com.framgia.dao;
 
 import java.util.List;
 
-import com.framgia.entity.Category;
+import com.framgia.model.Category;
 
 public interface CategoryDAO extends BaseDAO<Integer, Category> {
 	
-    // create
-    public boolean create(Category object);
+    // find by name
+    Category findByName(String categoryName);
  
-    // update
-    public boolean update(Category object);
- 
-    // delete
-    public boolean delete(Category object);
- 
-    // find by id
-    public Category findById(int categoryId);
+    // load list category
+    List<Category> getAll();
 	
-	public List<Category> getCategories();
-
-	public Category getCategoryByID(Integer id);
 }

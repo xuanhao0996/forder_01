@@ -1,4 +1,4 @@
-package com.framgia.dao.impl;
+/*package com.framgia.dao.impl;
 
 import java.util.List;
 
@@ -45,3 +45,4 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 	}
 		
 }
+*/

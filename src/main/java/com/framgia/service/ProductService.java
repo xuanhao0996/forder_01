@@ -1,4 +1,4 @@
-package com.framgia.service;
+/*package com.framgia.service;
 
 import java.util.List;
 
@@ -12,3 +12,4 @@ public interface ProductService extends BaseService<Integer, ProductInfo> {
 
 	public ProductInfo getProductById(Integer id);
 }
+*/

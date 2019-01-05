@@ -1,4 +1,4 @@
-package com.framgia.dao.impl;
+/*package com.framgia.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -37,3 +37,4 @@ public class CartDetailDAOImpl extends GenericDAO<Integer, Cart> implements Cart
 	}
 
 }
+*/
