@@ -6,7 +6,7 @@
     <class name="com.framgia.model.Payment" table="payments" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="idmodel" />
+            <generator class="identity" />
         </id>
         <property name="paymentMethod" type="int">
             <column name="payment_method" not-null="true" />

@@ -7,12 +7,13 @@ import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.criterion.Restrictions;
 
+import com.framgia.bean.CartDetailInfo;
 import com.framgia.dao.CartDetailDAO;
 import com.framgia.dao.GenericDAO;
-import com.framgia.entity.Cart;
-import com.framgia.entity.CartDetail;
+import com.framgia.model.CartDetail;
 
-public class CartDetailDAOImpl extends GenericDAO<Integer, Cart> implements CartDetailDAO {
+
+public class CartDetailDAOImpl extends GenericDAO<Integer, CartDetail> implements CartDetailDAO {
 
 	@Override
 	public CartDetail findById(Serializable key, boolean isLock) {
@@ -36,5 +37,23 @@ public class CartDetailDAOImpl extends GenericDAO<Integer, Cart> implements Cart
 										+ "WHERE u.id = :id", CartDetail.class).setParameter("id", id).getResultList();
 	}
 
-}
-*/
+	@Override
+	public boolean delete(CartDetailInfo entity) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public CartDetail saveOrUpdate(CartDetail entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CartDetail findById(Serializable key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}*/

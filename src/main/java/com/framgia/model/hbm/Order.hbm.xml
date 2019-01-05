@@ -6,7 +6,7 @@
     <class name="com.framgia.model.Order" table="orders" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="idmodel" />
+            <generator class="identity" />
         </id>
         <many-to-one name="payment" class="com.framgia.model.Payment" fetch="select">
             <column name="payment_id" not-null="true" />

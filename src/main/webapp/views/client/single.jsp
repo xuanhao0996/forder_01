@@ -83,7 +83,7 @@
 			</div>
 			<div class="single-bottom">
 				<h4>Same Product</h4>
-				<c:forEach items="${products}" var="product" varStatus="count">
+				<%-- <c:forEach items="${products}" var="product" varStatus="count">
 					<c:if test="${count.index < 3}">
 						<div class="product">
 							<img class="img-responsive fashion" src="${product.image}" alt="">
@@ -94,7 +94,7 @@
 							<div class="clearfix"></div>
 						</div>
 					</c:if>
-				</c:forEach>
+				</c:forEach> --%>
 			</div>
 		</div>
 		<div class="clearfix"></div>

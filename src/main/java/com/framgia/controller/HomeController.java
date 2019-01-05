@@ -1,9 +1,16 @@
 package com.framgia.controller;
 
+import java.security.Principal;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.framgia.bean.UserInfo;
 
 @Controller
 public class HomeController extends BaseController {
@@ -11,16 +18,28 @@ public class HomeController extends BaseController {
 	private static final Logger logger = Logger.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/")
-	public ModelAndView index() {
+	public ModelAndView index(HttpSession httpSession, HttpServletRequest request) {
 		logger.info("home page");
-		ModelAndView model = new ModelAndView("home");
+		ModelAndView modelView = new ModelAndView("home");
 		//model.addObject("category", new CategoryInfo());
 		//add list category
-		model.addObject("categories", categoryService.getAll());
+		modelView.addObject("categories", categoryService.getAll());
 		
 		//add list product
-		model.addObject("products", productService.getAll());
-		return model;
+		modelView.addObject("products", productService.getAll());
+		
+		//check login
+		if (request.getUserPrincipal() != null) {
+			Principal principal = request.getUserPrincipal();
+			UserInfo userInfo = userService.findByEmail(principal.getName());
+			
+			modelView.addObject("email", principal.getName());
+			modelView.addObject("alertLogin", "success");
+			httpSession.setAttribute("currentUser", userInfo);
+		} else {
+			modelView.addObject("alertLogin", "err");
+		}
+		return modelView;
 	}
 	/*@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)
 	public String index(Model model, HttpSession httpSession, HttpServletRequest request) {

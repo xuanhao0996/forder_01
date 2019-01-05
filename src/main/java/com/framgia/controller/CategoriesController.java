@@ -1,23 +1,24 @@
 package com.framgia.controller;
 
-/*@Controller
-@RequestMapping(value="/categories")*/
-public class CategoriesController {
-	
-/*	@Autowired
-	private ProductService productService;
+import javax.servlet.http.HttpSession;
 
-	@Autowired
-	private CategoryService categoryService;
-	
-	@GetMapping(value = "/{id}")
-	public String showCategory(@PathVariable("id") Integer id, Model model, HttpSession httpSession) {
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping(value="/categories", method = RequestMethod.GET)
+public class CategoriesController extends BaseController {
+
+	@GetMapping(value = "/{categoryId}")
+	public String showCategory(@PathVariable("id") Integer id,
+								Model model, HttpSession httpSession) {
 		
-		CategoryInfo categoryInfo = categoryService.getCategoryById(id);
-		model.addAttribute("category", categoryInfo);
-		model.addAttribute("products",productService.getProductsByCategoryID(id));
-
+		model.addAttribute("categories", categoryService.getAll());
+		model.addAttribute("products", productService.findByCategoryId(id));
 		return "client-category";
-	}*/
-	
+	}
 }

@@ -1,14 +1,14 @@
 package com.framgia.dao;
 
-import java.io.Serializable;
-import java.util.List;
 
-import com.framgia.model.CartDetail;
+import com.framgia.bean.CartDetailInfo;
 
-public interface CartDetailDAO {
-	CartDetail findById(Serializable key, boolean isLock);
+public interface CartDetailDAO extends BaseDAO<Integer, CartDetailInfo> {
+/*	CartDetail findById(Serializable key, boolean isLock);
 
 	void saveOrUpdate(CartDetail cartDetail);
+		List<CartDetail> findCartDetailsByUserId(Integer id);
 
-	List<CartDetail> findCartDetailsByUserId(Integer id);
+*/	
+
 }

@@ -6,7 +6,7 @@
     <class name="com.framgia.model.Product" table="products" catalog="forder" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="idmodel" />
+            <generator class="identity" />
         </id>
         <many-to-one name="category" class="com.framgia.model.Category" fetch="select">
             <column name="category_id" not-null="true" />

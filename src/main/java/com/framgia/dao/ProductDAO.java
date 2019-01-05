@@ -10,4 +10,6 @@ public interface ProductDAO extends BaseDAO<Integer, Product>{
  
     // load list category
     List<Product> getAll();
+
+	List<Product> findByCategoryId(Integer id);
 }

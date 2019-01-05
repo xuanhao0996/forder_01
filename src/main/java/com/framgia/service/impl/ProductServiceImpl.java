@@ -57,7 +57,19 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	@Override
 	public List<ProductInfo> getAll() {
 		try {
-			return ConvertProduct.convertListProductToProductInfo(productDAO.getAll());
+			return ConvertProduct.listProToProInfo(productDAO.getAll());
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public List<ProductInfo> findByCategoryId(Integer id) {
+		try {
+			List<ProductInfo> list = ConvertProduct.listProToProInfo(productDAO.findByCategoryId(id));
+			return list;
+
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			return null;
