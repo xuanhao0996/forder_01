@@ -23,7 +23,7 @@
 						<li><a href="account.html"> <spring:message
 									code="account" /></a></li>
 						<li><a href="#"> <spring:message code="cart" /></a></li>
-						<li><a href="checkout.html"><spring:message
+						<li><a href="${pageContext.request.contextPath}/checkout"  onclick="checkLogin()"><spring:message
 									code="checkout" /></a></li>
 						<li>
 						<div class="cart">
@@ -51,7 +51,7 @@
                     <div class="clearfix"> </div>
                 </div>
                 <div class="login_buttons">
-                    <div class="check_button"><a href="checkout.html">Check out</a></div>
+                    <div class="check_button"><a href="${pageContext.request.contextPath}/checkout" onclick="checkLogin()">Check out</a></div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>
@@ -96,8 +96,8 @@
 			<div class="header-bottom-on">
 			<input value=" ${email}" type="hidden" id="emailLogin">
 				<c:choose>
-					<c:when test="${email != null }">
-						<h5>Welcome: ${email}</h5>
+					<c:when test="${currentUser != null }">
+						<h5>Welcome: ${currentUser.name}</h5>
 						<form action="<c:url value="/j_spring_security_logout" />"
 							method="post">
 							<input type="hidden" name="${_csrf.parameterName}"
@@ -165,3 +165,5 @@
 </div>
 <div hidden id="messageLogin" >${alertLogin}</div>
 <script src="${alertifyLog }"></script>
+ 
+ <input type="hidden" id="loginCheckout" value="${alertCheckout}"> 

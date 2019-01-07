@@ -10,10 +10,10 @@
                  <c:forEach var="map" items="${sessionScope.myCartItems}">
                      <div class="cart_box">
                          <div class="message">
-                             <div class="list_img"><img src="${pageContext.request.contextPath}/resources/pages/images/14.jpg" class="img-responsive" alt=""></div>
-                             <div class="list_close"><a href="${pageContext.request.contextPath}/cart/remove/${map.value.product.productId}.html">Remove item</a></div> 
-                             <div class="list_desc"><h4><a href="#"><c:out value="${map.value.product.productName}"/></a></h4><c:out value="${map.value.quantity}"/> x
-                                 $<c:out value="${map.value.product.productPrice}"/> = <span class="actual"> $<c:out value="${map.value.quantity * map.value.product.productPrice}"/></span></div>
+                             <div class="list_img"><img src="${map.value.product.image}" class="img-responsive" alt=""></div>
+                             <div class="list_close"><a href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}">Remove item</a></div> 
+                             <div class="list_desc"><h4><a href="#"><c:out value="${map.value.product.name}"/></a></h4><c:out value="${map.value.quantity}"/> x
+                                 $<c:out value="${map.value.product.price}"/> = <span class="actual"> $<c:out value="${map.value.quantity * map.value.product.price}"/></span></div>
                              <div class="clearfix"></div>
                          </div>
                      </div>
@@ -36,34 +36,30 @@
          <div class="contact">
              <h2 class=" contact-in">CHECKOUT </h2>
 
-             <div class="col-md-6 contact-top">
-                 <h3>Info</h3>
-                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
-                 <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id </p>				
-                 <ul class="social ">
-                     <li><span><i > </i>124 Avenue Street, Los angeles,California </span></li>
-                     <li><span><i class="down"> </i>+ 00 123 456 7890</span></li>
-                     <li><a href="mailto:info@example.com"><i class="mes"> </i>info@example.com</a></li>
-                 </ul>
-             </div>
-             <div class="col-md-6 contact-top">
-                 <form:form method="POST" action="${pageContext.request.contextPath}/cart/checkout.html" modelAttribute="receipt">
+            <%--  <div class="col-md-6 contact-top">
+                 <form method="POST" action="${pageContext.request.contextPath}/checkout">
                      <h3>Want to work with me?</h3>
                      <div>
                          <span>Your Name</span>
-                         <form:input path="receiptName"  />
+                         <input name="userName"  />
                      </div>
                      <div>
                          <span>Your Email</span>	
-                         <form:input path="receiptMail"  />
+                         <input name="userEmail"  />
                      </div>
                      <div>
                          <span>Your Address</span>	
-                         <form:input path="receiptAddress"  />
+                         <input name="userAddress"  />
                      </div>
                      <input type="submit" value="SEND" >	
-                 </form:form>
-             </div>
+                 </form>
+             </div> --%>
+             
+             <br><br>
+             <a href="${pageContext.request.contextPath}/checkout/acceptCheckout" >Checkout Now</a>
+             <br><br>
+             <a href="${pageContext.request.contextPath}">Continue Buy</a>
+             <br><br>
              <div class="clearfix"> </div>
          </div>
 
