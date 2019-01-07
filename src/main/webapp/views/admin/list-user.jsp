@@ -8,14 +8,15 @@
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<strong>${msg}</strong>
+				<spring:message code="${msg}" var="notFound" />
+				<strong>${notFound}</strong>
 			</div>
 		</c:if>
 		
 		<div class="row md-col-8">
 			<h2>Search From</h2>
-			<spring:url value="/${student.id}" var="searchActionUrl" />
-			<form:form action="searchActionUrl" method="GET" modelAttribute="student"
+			<spring:url value="/${user.id}" var="searchActionUrl" />
+			<form:form action="searchActionUrl" method="GET" modelAttribute="user"
 				cssClass="form-horizontal">
 				<table>
 					<tr>
@@ -34,7 +35,7 @@
 			<div class="md-col-8">
 				<fieldset>
 					<legend>
-						<h2>Customer List</h2>
+						<h2>User List</h2>
 					</legend>
 					<table class="table table-hover table-dark">
 						<thead class="bg-primary">
@@ -42,38 +43,33 @@
 								<th scope="col">#</th>
 								<th scope="col">Email</th>
 								<th scope="col">Username</th>
-								<th scope="col">Gender</th>
-								<th></th>
+								<th scope="col">Phone</th>
+								<th scope="col">Role</th>
+								<th scope="col"> Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${students}" var="student" varStatus="count">
+							<c:forEach items="${users}" var="users" varStatus="count">
 								<tr>
 									<th scope="row">${count.index + 1}</th>
-									<td>${student.email}</td>
-									<td>${student.name}</td>
+									<td>${users.email}</td>
+									<td>${users.name}</td>
+									<td>${users.phone}</td>
 									<td>
-										 <c:if test="${student.gender == 1}" >
-										     Fmale
-										 </c:if>
-										 <c:if test="${student.gender == 0}" >
-										     Male
-										 </c:if>
-										 
-										 <c:if test="${student.gender != 0 && student.gender != 1}" >
-										 	N/A
-										 </c:if>
+										<c:if test="${users.role == 'ROLE_ADMIN'}"> Admin </c:if>
+										<c:if test="${users.role == 'ROLE_USER'}"> User </c:if>
+										<c:if test="${users.role != 'ROLE_ADMIN' && users.role != 'ROLE_USER'}"> N/A </c:if>								
 									</td>
 									<td>
-										<spring:url value="/${student.id}" var="detailActionUrl" />
+										<spring:url value="/admin/user/${users.id}" var="detailActionUrl" />
 										<button class="btn btn-info"
 											onclick="location.href='${detailActionUrl}'">Detail</button>
 											
-										<spring:url value="/${student.id}/edit" var="editActionUrl" />
+										<spring:url value="/admin/user/edit/${users.id}" var="editActionUrl" />
 										<button class="btn btn-warning"
 											onclick="location.href='${editActionUrl}'">Edit</button>
 											
-										<spring:url value="/${student.id}/delete" var="deleteActionUrl" />
+										<spring:url value="/admin/user/delete/${users.id}" var="deleteActionUrl" />
 										<button class="btn btn-danger"
 											onclick="location.href='${deleteActionUrl}'">Delete</button>
 									</td>

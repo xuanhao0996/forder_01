@@ -20,12 +20,9 @@ public class User {
 	private List<Address> addresses = new ArrayList<>();
 	private List<Cart> carts = new ArrayList<>();
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public User(Integer id, String email, String password, String name, String phone, int role, List<Order> orders,
 			List<Address> addresses, List<Cart> carts) {
-		super();
 		this.id = id;
 		this.email = email;
 		this.password = password;

@@ -16,10 +16,14 @@
 	</c:choose>
 	<br />
 	<div class="col-md-6"  style="margin: 0 auto;">
-		<spring:url value="/student" var="userActionUrl" />
+		<spring:url value="/admin/user/saveUser" var="userActionUrl" />
+		
 		<form:form class="form-horizontal" method="post" 
-			modelAttribute="studentForm" action="${userActionUrl}">
+			modelAttribute="userForm" action="${userActionUrl}/">
 			<form:hidden path="id" />
+			<form:hidden path="password" />
+			<form:hidden path="role" />
+			
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Name</label>
 				<div class="col-sm-10">
@@ -35,12 +39,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Sex</label>
+				<label class="col-sm-2 control-label">Phone</label>
 				<div class="col-sm-10">
-					<label class="radio-inline"> <form:radiobutton path="gender" value="0" /> Male
-					</label>
-					<label class="radio-inline"> <form:radiobutton path="gender" value="1" /> Female
-					</label>
+					<form:input path="phone" class="form-control" id="phone" placeholder="Phone" />
 				</div>
 			</div>
 			<div class="form-group">

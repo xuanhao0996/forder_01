@@ -1,4 +1,4 @@
-package com.framgia.controller;
+package com.framgia.controller.admins;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.framgia.controller.BaseController;
 
 @Controller
 @RequestMapping(value = "/categories", method = RequestMethod.GET)

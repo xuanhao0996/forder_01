@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <spring:url value="/" var="urlHome" />
-<spring:url value="/students/add" var="addActionUrl" />
+<spring:url value="/admin/add" var="addActionUrl" />
 
 <nav class="navbar navbar-inverse ">
 	<div class="container">
@@ -12,7 +12,7 @@
 		</div>
 		<div id="navbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="${addActionUrl}">Add Student</a></li>
+				<li class="active"><a href="${addActionUrl}">Add User</a></li>
 			</ul>
 		</div>
 	</div>

@@ -12,19 +12,25 @@
 	</definition>
 
 	<!-- List Customer -->
-	<definition name="home" extends="baseLayout">
+	<definition name="admin-home" extends="baseLayout">
 		<put-attribute name="title" value="HOME" />
-		<put-attribute name="body" value="/views/admins/list-customer.jsp" />
+		<put-attribute name="body" value="/views/admin/list-user.jsp" />
 	</definition>
 	
-	<definition name="customer" extends="baseLayout">
+	<!-- List Customer -->
+	<definition name="list-user" extends="baseLayout">
 		<put-attribute name="title" value="HOME" />
-		<put-attribute name="body" value="/views/admin/customer.jsp" />
+		<put-attribute name="body" value="/views/admin/list-user.jsp" />
 	</definition>
 	
-	<definition name="customer-form" extends="baseLayout">
+	<definition name="user" extends="baseLayout">
 		<put-attribute name="title" value="HOME" />
-		<put-attribute name="body" value="/views/students/customer-form.jsp" />
+		<put-attribute name="body" value="/views/admin/user.jsp" />
+	</definition>
+	
+	<definition name="user-form" extends="baseLayout">
+		<put-attribute name="title" value="HOME" />
+		<put-attribute name="body" value="/views/admin/user-form.jsp" />
 	</definition>
 
 </tiles-definitions>

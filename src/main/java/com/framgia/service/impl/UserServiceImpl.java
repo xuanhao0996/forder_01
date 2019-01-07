@@ -1,8 +1,10 @@
 package com.framgia.service.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.LockMode;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -17,18 +19,30 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
 	@Override
 	public User findById(Serializable key) {
-		return null;
+		try {
+			return getUserDAO().findById(key);
+		}catch (Exception e) {
+			return null;
+		}
 	}
 
 	@Override
 	public User saveOrUpdate(User entity) {
-		return getUserDAO().saveOrUpdate(entity);
+		try {
+			return getUserDAO().saveOrUpdate(entity);
+		}catch (Exception e) {
+			throw(e);
+		}
 	}
 
 	@Override
 	public boolean delete(User entity) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			getUserDAO().delete(entity);
+			return true;
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	@Override
@@ -39,7 +53,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 			if (!checkUser) {
 				return null;
 			}
-			return ConvertUser.convertSingleUserToUserInfo(getUserDAO().findByEmail(email));
+			return ConvertUser.userToUserInfo(getUserDAO().findByEmail(email));
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
@@ -49,10 +63,31 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 	@Override
 	public UserInfo findByEmail(String email) {
 		try {
-			return ConvertUser.convertSingleUserToUserInfo(userDAO.findByEmail(email));
+			return ConvertUser.userToUserInfo(userDAO.findByEmail(email));
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			return null;
 		}
 	}
+
+	@Override
+	public List<User> getAll() {
+		try {
+			return userDAO.getAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public boolean deleteUser(Integer id) {
+		try {
+			User user = getUserDAO().findByIdUsingLock(id, LockMode.PESSIMISTIC_WRITE);
+			return delete(user);
+		}catch (Exception e) {
+			throw(e);
+		}
+	}
+	
 }

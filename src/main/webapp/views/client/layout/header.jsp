@@ -31,58 +31,32 @@
 										value="${sessionScope.myCartNum}" /></span>
 							</div>
 							<ul class="sub-icon1 list">
-
-								<h3>
-									Recently added items (
-									<c:out value="${sessionScope.myCartNum}" />
-									)
-								</h3>
-								<div class="shopping_cart">
-									<c:forEach var="map" items="${sessionScope.myCartItems}">
-										<div class="cart_box">
-											<div class="message">
-												<div class="alert-close">
-													<a
-														href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}"></a>
-												</div>
-												<div class="list_img">
-													<img src="${map.value.product.image}"
-														class="img-responsive" alt="">
-												</div>
-												<div class="list_desc">
-													<h4>
-														<a href="#"><c:out value="${map.value.product.name}" /></a>
-													</h4>
-													<c:out value="${map.value.quantity}" />
-													x
-													<c:out value="${map.value.product.price}" />
-													$= <span class="actual"> <c:out
-															value="${map.value.quantity * map.value.product.price}" />
-														$
-													</span>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</c:forEach>
-								</div>
-								<div class="total">
-									<div class="total_left">Total:</div>
-									<div class="total_right">
-										$
-										<c:out value="${sessionScope.myCartTotal}" />
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="login_buttons">
-									<div class="check_button">
-										<a href="checkout.html">Check out</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</ul>
-						</li>
+            <h3>Recently added items (<c:out value="${sessionScope.myCartNum}"/>)</h3>
+                <div class="shopping_cart">
+                    <c:forEach var="map" items="${sessionScope.myCartItems}">
+                        <div class="cart_box">
+                            <div class="message">
+                                <div class="alert-close"><a href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}"></a></div> 
+                                <div class="list_img"><img src="${map.value.product.image}" class="img-responsive" alt=""></div>
+                                <div class="list_desc"><h4><a href="#"><c:out value="${map.value.product.name}"/></a></h4><c:out value="${map.value.quantity}"/> x
+                                    <c:out value="${map.value.product.price}"/> $= <span class="actual"> <c:out value="${map.value.quantity * map.value.product.price}"/> $</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+                <div class="total">
+                    <div class="total_left">Total: </div>
+                    <div class="total_right">$<c:out value="${sessionScope.myCartTotal}"/></div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="login_buttons">
+                    <div class="check_button"><a href="${pageContext.request.contextPath}/checkout" onclick="checkLogin()">Check out</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+    </ul>
+							</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -106,12 +80,7 @@
 									href="${pageContext.request.contextPath}/categories/${category.id}">${category.name}</a></li>
 							</c:forEach>
 						</ul></li>
-					<li><a href="products.html"> Tablets</a></li>
-					<li><a href="products.html">Components</a></li>
-					<li><a href="products.html">Software</a></li>
-					<li><a href="products.html">Phones & PDAs </a></li>
-					<li><a href="products.html"> Cameras </a></li>
-					<li><a href="contact.html">Contact </a></li>
+					<li><a href="${pageContext.request.contextPath}/admin">ADMIN </a></li>
 
 				</ul>
 				<script type="text/javascript" src="/forder_01/assets/js/nav.js"></script>
@@ -196,5 +165,7 @@
 		</div>
 	</div>
 </div>
-<div hidden id="messageLogin">${alertLogin}</div>
+<div hidden id="messageLogin" >${alertLogin}</div>
 <script src="${alertifyLog }"></script>
+ 
+ <input type="hidden" id="loginCheckout" value="${alertCheckout}"> 

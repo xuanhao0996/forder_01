@@ -1,8 +1,10 @@
 package com.framgia.dao.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 
 import com.framgia.dao.CategoryDAO;
@@ -40,5 +42,11 @@ public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements Ca
 	 * "Category WHERE id = :id").setParameter("id", id).getSingleResult(); return
 	 * category; }
 	 */
+
+	@Override
+	public Category findByIdUsingLock(Serializable id, LockMode lockMode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
