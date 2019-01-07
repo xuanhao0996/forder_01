@@ -30,13 +30,10 @@ public class HomeController extends BaseController {
 	public ModelAndView index(HttpSession httpSession, HttpServletRequest request) {
 		logger.info("home page");
 		ModelAndView modelView = new ModelAndView("home");
-		// model.addObject("category", new CategoryInfo());
 		// add list category
 		modelView.addObject("categories", categoryService.getAll());
-
 		// add list product
 		modelView.addObject("products", productService.getAll());
-
 		// check login
 		if (request.getUserPrincipal() != null) {
 			Principal principal = request.getUserPrincipal();

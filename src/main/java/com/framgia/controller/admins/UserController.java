@@ -23,7 +23,8 @@ public class UserController extends BaseController {
 	
 	@GetMapping("/list")
 	public String listUser(Model model) {
-		model.addAttribute("users", userService.getAll());
+		model.addAttribute("user", new UserInfo());
+		model.addAttribute("users", ConvertUser.usersToUserInfos(userService.getAll()));
 		return "list-user";
 	}
 	
@@ -75,9 +76,8 @@ public class UserController extends BaseController {
 	}
 	
 	@PostMapping(value = "/saveUser")
-	public String saveUser(@ModelAttribute("userForm") UserInfo userInfo) {
-		userInfo.getId();
+	public String saveUser(@ModelAttribute("userForm") UserInfo userInfo, RedirectAttributes redirectAttrs) {
 		userService.saveOrUpdate(ConvertUser.userInfoToUser(userInfo));
-		return "redirect:/";
+		return "redirect:/admin/user/list";
 	}
 }

@@ -17,16 +17,16 @@ public class ConvertUser {
 		UserInfo userInfo = new UserInfo();
 		BeanUtils.copyProperties(user, userInfo);
 		if (user.getRole() == 0) {
-			userInfo.setRole(ROLES.USER.toString());
-		} else {
 			userInfo.setRole(ROLES.ADMIN.toString());
+		} else {
+			userInfo.setRole(ROLES.USER.toString());
 		}
 		return userInfo;
 	}
 
 	public static User userInfoToUser(UserInfo userInfo) {
 		User user = new User();
-		BeanUtils.copyProperties(user, userInfo);
+		BeanUtils.copyProperties(userInfo, user);
 		user.setPassword(passwordEncoder.encode(userInfo.getPassword()));
 		if (ROLES.ADMIN.toString().equals(userInfo.getRole())) {
 			user.setRole(0);
