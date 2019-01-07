@@ -4,12 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.framgia.controller.BaseController;
 
 @Controller
-@RequestMapping("/products")
 public class ProductsController extends BaseController {
 
 	/*
@@ -22,7 +20,7 @@ public class ProductsController extends BaseController {
 	 */
 	
 	// show information of product by single.jsp
-	@GetMapping(value = "/{productId}")
+	@GetMapping(value = "/products/{productId}")
 	public String showSingleProduct(@PathVariable("productId") Integer productId, Model model) {
 		model.addAttribute("categories", categoryService.getAll());
 		model.addAttribute("product", productService.findById(productId));
