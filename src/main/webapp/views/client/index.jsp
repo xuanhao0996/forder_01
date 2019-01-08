@@ -51,7 +51,7 @@
 							<div class="top-content">
 								<h5><a href="single.html">"${product.name}"</a></h5>
 								<div class="white">
-									<a href="${pageContext.request.contextPath}/addToCart/${product.id}"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+									<a href="${pageContext.request.contextPath}/cartDetail/add/${product.id}"class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
 									<p class="dollar"><span class="in-dollar">$</span><span>${product.price}</span></p>
 									<div class="clearfix"></div>
 								</div>
@@ -131,14 +131,15 @@
 								<a href="single.html" class="compare-in "><img
 									src="${product.image}" alt="" />
 									<div class="compare in-compare">
-										<span>Add to Compare</span> <span>Add to Whislist</span>
+										<span>Add to Compare</span> 
+										<span>Add to Whislist</span>
 									</div></a>
 								<div class="top-content bag">
 									<h5>
 										<a href="single.html">"${product.name}"</a>
 									</h5>
 									<div class="white">
-										<a href="single.html"
+										<a href="${pageContext.request.contextPath}/cartDetail/add/${product.id}"
 											class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD
 											TO CART</a>
 										<p class="dollar">
@@ -184,4 +185,5 @@
 	</div>
 </div>
 <!---->
-
+<div hidden id="existProduct">${existProduct }</div>
+<script src="${alertifyLog }"></script>

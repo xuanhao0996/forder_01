@@ -1,29 +1,26 @@
 package com.framgia.bean;
 
-import com.framgia.model.Cart;
-
 public class CartDetailInfo {
 	private Integer id;
-	private Cart cart;
+	private CartInfo cart;
 	private ProductInfo product;
 	private int quantity;
 
 	public CartDetailInfo() {
 	}
 
-	public CartDetailInfo(Cart cart, ProductInfo product) {
+	public CartDetailInfo(CartInfo cart, ProductInfo product) {
 		this.cart = cart;
 		this.product = product;
 	}
 
-	public CartDetailInfo(Cart cart, ProductInfo product, int quantity) {
+	public CartDetailInfo(CartInfo cart, ProductInfo product, int quantity) {
 		this.cart = cart;
 		this.product = product;
 		this.quantity = quantity;
 	}
 
-	public CartDetailInfo(Integer id, Cart cart, ProductInfo product, int quantity) {
-		super();
+	public CartDetailInfo(Integer id, CartInfo cart, ProductInfo product, int quantity) {
 		this.id = id;
 		this.cart = cart;
 		this.product = product;
@@ -38,11 +35,11 @@ public class CartDetailInfo {
 		this.id = id;
 	}
 
-	public Cart getCart() {
+	public CartInfo getCart() {
 		return cart;
 	}
 
-	public void setCart(Cart cart) {
+	public void setCart(CartInfo cart) {
 		this.cart = cart;
 	}
 

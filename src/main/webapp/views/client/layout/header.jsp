@@ -25,64 +25,38 @@
 						<li><a href="#"> <spring:message code="cart" /></a></li>
 						<li><a href="checkout.html"><spring:message
 									code="checkout" /></a></li>
-						<li><div class="cart">
-								<a href="#" class="cart-in"> </a> <span> 0</span>
+						<li>
+						<div class="cart">
+								<a href="#" class="cart-in"> </a>
+								 <span> <c:out value="${sessionScope.myCartNum}"/></span>
 							</div>
 							<ul class="sub-icon1 list">
-								<h3>
-									<spring:message code="additems" />
-									(2)
-								</h3>
-								<div class="shopping_cart">
-									<div class="cart_box">
-										<div class="message">
-											<div class="alert-close"></div>
-											<div class="list_img">
-												<img src="/forder_01/assets/images/14.jpg"
-													class="img-responsive" alt="">
-											</div>
-											<div class="list_desc">
-												<h4>
-													<a href="#">velit esse molestie</a>
-												</h4>
-												1 x<span class="actual"> $12.00</span>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="cart_box1">
-										<div class="message1">
-											<div class="alert-close1"></div>
-											<div class="list_img">
-												<img src="/forder_01/assets/images/15.jpg"
-													class="img-responsive" alt="">
-											</div>
-											<div class="list_desc">
-												<h4>
-													<a href="#">velit esse molestie</a>
-												</h4>
-												1 x<span class="actual"> $12.00</span>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="total">
-									<div class="total_left">
-										<spring:message code="cartsubtotal" />
-										:
-									</div>
-									<div class="total_right">$250.00</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="login_buttons">
-									<div class="check_button">
-										<a href="checkout.html"><spring:message code="checkout" /></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</ul></li>
+            <h3>Recently added items (<c:out value="${sessionScope.myCartNum}"/>)</h3>
+                <div class="shopping_cart">
+                    <c:forEach var="map" items="${sessionScope.myCartItems}">
+                        <div class="cart_box">
+                            <div class="message">
+                                <div class="alert-close"><a href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}"></a></div> 
+                                <div class="list_img"><img src="${map.value.product.image}" class="img-responsive" alt=""></div>
+                                <div class="list_desc"><h4><a href="#"><c:out value="${map.value.product.name}"/></a></h4><c:out value="${map.value.quantity}"/> x
+                                    <c:out value="${map.value.product.price}"/> $= <span class="actual"> <c:out value="${map.value.quantity * map.value.product.price}"/> $</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+                <div class="total">
+                    <div class="total_left">Total: </div>
+                    <div class="total_right">$<c:out value="${sessionScope.myCartTotal}"/></div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="login_buttons">
+                    <div class="check_button"><a href="checkout.html">Check out</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+    </ul>
+							</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

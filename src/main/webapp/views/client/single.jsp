@@ -19,7 +19,7 @@
 
 					<h4>${product.name}</h4>
 					<div class="para-grid">
-						<span class="add-to">$ ${product.price}</span> <a href="#"
+						<span class="add-to">$ ${product.price}</span> <a href="${pageContext.request.contextPath}/cartDetail/add/${product.id}"
 							class="hvr-shutter-in-vertical cart-to">Add to Cart</a>
 						<div class="clearfix"></div>
 					</div>
