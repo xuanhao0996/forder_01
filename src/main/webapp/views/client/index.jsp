@@ -185,5 +185,11 @@
 	</div>
 </div>
 <!---->
-<div hidden id="existProduct">${existProduct }</div>
+<%-- <div hidden id="existProduct">${existProduct }</div>
 <script src="${alertifyLog }"></script>
+ --%>
+<%-- <div  style="visibility: hidden;" id="loginCheckout">${loginCheckout }</div>
+<script src="${alertifyLog }"></script>
+ --%>
+
+ 

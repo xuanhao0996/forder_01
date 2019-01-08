@@ -66,4 +66,9 @@
 		<put-attribute name="body" value="/views/client/carts.jsp"/>
 	</definition>
 	
+	<!-- Checkout -->
+	<definition name="client-checkout" extends="client-baseLayout">
+	<put-attribute name="title" value="SINGLE-PRODUCT" />
+		<put-attribute name="body" value="/views/client/checkout.jsp"/>
+	</definition>
 </tiles-definitions>

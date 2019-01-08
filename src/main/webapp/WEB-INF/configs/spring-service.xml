@@ -35,21 +35,4 @@
 		</property>
 	</bean>
 	
-	<bean id="CartService" parent="baseTransactionProxy">
-		<property name="target">
-			<bean class="com.framgia.service.impl.CartServiceImpl">
-				<property name="cartDAO" ref="CartDAO" />
-				<property name="cartDetailDAO" ref="CartDetailDAO" />
-			</bean>
-		</property>
-	</bean>
-	
-	<bean id="CartDetailService" parent="baseTransactionProxy">
-		<property name="target">
-			<bean class="com.framgia.service.impl.CartDetailServiceImpl">
-				<property name="cartDAO" ref="CartDAO" />
-				<property name="cartDetailDAO" ref="CartDetailDAO" />
-			</bean>
-		</property>
-	</bean>
 </beans>

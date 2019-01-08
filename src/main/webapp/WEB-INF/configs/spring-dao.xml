@@ -19,15 +19,4 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="CartDAO" class="com.framgia.dao.impl.CartDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="CartDetailDAO"
-		class="com.framgia.dao.impl.CartDetailDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
 </beans>

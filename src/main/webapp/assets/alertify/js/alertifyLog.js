@@ -18,3 +18,14 @@ var getMessageExistsUser = document.getElementById("existProduct").innerHTML;
 if (getMessageExists == 'existProduct') {
 	alertify.error("Exist Product!");
 }
+
+var getMessageLoginForCheckout = document.getElementById("loginCheckout").innerHTML;
+if (getMessageLoginForCheckout == 'loginCheckout') {
+	 alert("Dang nhap di");
+}
+
+function checkLogin() {
+	if($("#loginCheckout").val() !== "") {
+		alert("Dang nhap di");
+	}
+}
