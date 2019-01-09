@@ -1,23 +1,16 @@
 package com.framgia.controller;
 
-import java.io.IOException;
 import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.http.client.ClientProtocolException;
 import org.apache.log4j.Logger;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.framgia.bean.GoogleInfo;
 import com.framgia.bean.UserInfo;
-import com.framgia.hepler.ConvertUser;
 
 @Controller
 public class HomeController extends BaseController {
@@ -44,6 +37,36 @@ public class HomeController extends BaseController {
 			httpSession.setAttribute("currentUser", userInfo);
 		} else {
 			modelView.addObject("alertLogin", "err");
+		}
+
+		/*modelView.addObject("products", productService.getProducts(0));
+		modelView.addObject("sumPage", sumPage);*/
+		return modelView;
+	}
+/*
+	@GetMapping("/login-google")
+	public String loginGoogle(HttpServletRequest request, HttpSession httpSession, Model model)
+			throws ClientProtocolException, IOException {
+		String code = request.getParameter("code");
+
+		if (StringUtils.isNotBlank(code) || code.isEmpty()) {
+			model.addAttribute("messageLogin", "err");
+			return "redirect:/";
+		}
+		model.addAttribute("messageLogin", "success");
+		String accessToken = googleUtils.getToken(code);
+		GoogleInfo googleInfo = googleUtils.getUserInfo(accessToken);
+		checkEmailAndPasswordByGoogle(googleInfo, model, httpSession);
+		return "redirect:/";
+	}
+
+	private void checkEmailAndPasswordByGoogle(GoogleInfo googleInfo, Model model, HttpSession httpSession) {
+		UserInfo userCurrent = userService.findByEmailAndPassword(googleInfo.getEmail(), googleInfo.getId());
+
+		if (userCurrent == null) {
+			userService.saveOrUpdate(setValueUser(googleInfo));
+			model.addAttribute("alertLogin", "success");
+>>>>>>> v2
 		}
 		return modelView;
 	}
@@ -86,5 +109,5 @@ public class HomeController extends BaseController {
 		user.setPhone("");
 		return user;
 	}
-
+*/
 }

@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<spring:url value="/assets/alertify/js/alertifyLog.js" var="alertifyLog"/>
+<spring:url value="/assets/alertify/js/alertifyLog.js" var="alertifyLog" />
 
 <div class="header">
 	<div class="header-top">
@@ -26,37 +26,63 @@
 						<li><a href="${pageContext.request.contextPath}/checkout"  onclick="checkLogin()"><spring:message
 									code="checkout" /></a></li>
 						<li>
-						<div class="cart">
-								<a href="#" class="cart-in"> </a>
-								 <span> <c:out value="${sessionScope.myCartNum}"/></span>
+							<div class="cart">
+								<a href="#" class="cart-in"> </a> <span> <c:out
+										value="${sessionScope.myCartNum}" /></span>
 							</div>
 							<ul class="sub-icon1 list">
-            <h3>Recently added items (<c:out value="${sessionScope.myCartNum}"/>)</h3>
-                <div class="shopping_cart">
-                    <c:forEach var="map" items="${sessionScope.myCartItems}">
-                        <div class="cart_box">
-                            <div class="message">
-                                <div class="alert-close"><a href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}"></a></div> 
-                                <div class="list_img"><img src="${map.value.product.image}" class="img-responsive" alt=""></div>
-                                <div class="list_desc"><h4><a href="#"><c:out value="${map.value.product.name}"/></a></h4><c:out value="${map.value.quantity}"/> x
-                                    <c:out value="${map.value.product.price}"/> $= <span class="actual"> <c:out value="${map.value.quantity * map.value.product.price}"/> $</span></div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="total">
-                    <div class="total_left">Total: </div>
-                    <div class="total_right">$<c:out value="${sessionScope.myCartTotal}"/></div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="login_buttons">
-                    <div class="check_button"><a href="${pageContext.request.contextPath}/checkout" onclick="checkLogin()">Check out</a></div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="clearfix"></div>
-    </ul>
-							</li>
+
+								<h3>
+									Recently added items (
+									<c:out value="${sessionScope.myCartNum}" />
+									)
+								</h3>
+								<div class="shopping_cart">
+									<c:forEach var="map" items="${sessionScope.myCartItems}">
+										<div class="cart_box">
+											<div class="message">
+												<div class="alert-close">
+													<a
+														href="${pageContext.request.contextPath}/cartDetail/remove/${map.value.product.id}"></a>
+												</div>
+												<div class="list_img">
+													<img src="${map.value.product.image}"
+														class="img-responsive" alt="">
+												</div>
+												<div class="list_desc">
+													<h4>
+														<a href="#"><c:out value="${map.value.product.name}" /></a>
+													</h4>
+													<c:out value="${map.value.quantity}" />
+													x
+													<c:out value="${map.value.product.price}" />
+													$= <span class="actual"> <c:out
+															value="${map.value.quantity * map.value.product.price}" />
+														$
+													</span>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</c:forEach>
+								</div>
+								<div class="total">
+									<div class="total_left">Total:</div>
+									<div class="total_right">
+										$
+										<c:out value="${sessionScope.myCartTotal}" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="login_buttons">
+									<div class="check_button">
+										<a href="checkout.html">Check out</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="clearfix"></div>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -69,9 +95,10 @@
 				<a class="toggleMenu" href="#"><spring:message code="menu" /></a>
 				<ul class="nav">
 
-					<li class="active"><a href="${pageContext.request.contextPath}"><i> </i>HOME</a></li>
+					<li class="active"><a
+						href="${pageContext.request.contextPath}"><i> </i>HOME</a></li>
 
-					<li ><a href="#" >Fruits</a> 
+					<li><a href="#">Fruits</a>
 
 						<ul class="drop">
 							<c:forEach items="${categories}" var="category">
@@ -94,7 +121,7 @@
 	<div class="header-bottom-in">
 		<div class="container">
 			<div class="header-bottom-on">
-			<input value=" ${email}" type="hidden" id="emailLogin">
+				<input value=" ${email}" type="hidden" id="emailLogin">
 				<c:choose>
 					<c:when test="${currentUser != null }">
 						<h5>Welcome: ${currentUser.name}</h5>
@@ -125,8 +152,8 @@
 									<td><input type='password' name='password' /></td>
 								</tr>
 								<tr>
-									<td id="confirmLogin" colspan='2'><input name="submit" type="submit"
-										value="login" /></td>
+									<td id="confirmLogin" colspan='2'><input name="submit"
+										type="submit" value="login" /></td>
 								</tr>
 							</table>
 							<input type="hidden" name="${_csrf.parameterName}"
@@ -138,8 +165,9 @@
 					<ul class="social-in">
 						<li><a href="#"><i class="facebook"> </i></a></li>
 						<li><a href="#"><i class="twitter"> </i></a></li>
-						
-						<li><a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8083/forder_01/login-google&response_type=code&client_id=650605713330-9s9j72fd23vgfqdlc380mh0re75mj7cm.apps.googleusercontent.com&approval_prompt=force">Gmail</a></li>
+
+						<li><a
+							href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8083/forder_01/login-google&response_type=code&client_id=650605713330-9s9j72fd23vgfqdlc380mh0re75mj7cm.apps.googleusercontent.com&approval_prompt=force">Gmail</a></li>
 					</ul>
 					<div class="down-top">
 						<select class="in-drop">
@@ -148,12 +176,17 @@
 							<option value="Yen" class="in-of">Yen</option>
 						</select>
 					</div>
-					<div class="search">
-						<form>
-							<input type="text" value="Search" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = '';}"> <input
-								type="submit" value="">
-						</form>
+					<div ng-app="myApp" ng-controller="ProductController as ctrl"
+						class="search">
+
+						<div angucomplete-alt id="txtAutocomplete"
+							placeholder="Type country name" pause="100"
+							selected-object="ctrl.SelectedProduct" local-data="ctrl.products"
+							search-fields="name" title-field="ProductName" minlength="1"
+							input-class="form-control" match-class="highlight"></div>
+						<!--display selected country-->
+						<div ng-show="ctrl.SelectedProduct">
+							{{ctrl.SelectedProduct.name}}</div>
 					</div>
 
 					<div class="clearfix"></div>
@@ -163,7 +196,5 @@
 		</div>
 	</div>
 </div>
-<div hidden id="messageLogin" >${alertLogin}</div>
+<div hidden id="messageLogin">${alertLogin}</div>
 <script src="${alertifyLog }"></script>
- 
- <input type="hidden" id="loginCheckout" value="${alertCheckout}"> 

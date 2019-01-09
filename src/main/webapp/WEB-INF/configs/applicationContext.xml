@@ -16,7 +16,12 @@
 	
 	<!-- Load all file from package com.framgia to bean. There, Almost are controllers -->
 	<context:component-scan base-package="com.framgia.*" />
-
+<mvc:cors>
+    <mvc:mapping path="/**"
+        allowed-origins="*"
+        allowed-headers="Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Authorization, X-Requested-With, requestId, Correlation-Id"
+        allowed-methods="GET, PUT, POST, DELETE"/>
+</mvc:cors>
 	<!-- Use for json response -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
