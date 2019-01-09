@@ -21,7 +21,7 @@ public class LoginSecurityImpl extends BaseServiceImpl implements UserDetailsSer
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		logger.info("login with: " + email);
 		try {
-			UserInfo user = ConvertUser.convertSingleUserToUserInfo(getUserDAO().findByEmail(email));
+			UserInfo user = ConvertUser.userToUserInfo(getUserDAO().findByEmail(email));
 			if (user == null) {
 				logger.info("User not found " + email);
 				throw new UsernameNotFoundException(null);

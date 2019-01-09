@@ -8,4 +8,5 @@ public interface BaseService<PK, T> {
 	public T saveOrUpdate(T entity);
 
 	public boolean delete(T entity);
+	
 }

@@ -21,7 +21,7 @@
 			authentication-success-handler-ref="" />
 
 		<logout logout-url="/j_spring_security_logout"
-			logout-success-url="/index" delete-cookies="JSESSIONID" />
+			logout-success-url="/" delete-cookies="JSESSIONID" />
 	</http>
 	<authentication-manager>
 		<authentication-provider

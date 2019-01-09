@@ -3,6 +3,7 @@ package com.framgia.dao;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
+import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,7 @@ public abstract class GenericDAO<PL extends Serializable, T> extends HibernateDa
 		return sessionFactory.getCurrentSession();
 	}
 	
-	
+	public T findByIdUsingLock(Serializable id, LockMode lockMode) {
+		return getSession().load(persistentClass, id, lockMode);
+	}
 }

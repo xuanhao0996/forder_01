@@ -1,7 +1,9 @@
 package com.framgia.dao.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import com.framgia.dao.GenericDAO;
 import com.framgia.dao.ProductDAO;
@@ -37,6 +39,12 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 										+ "WHERE p.category.id = :id")
 										.setParameter("id", id)
 										.getResultList();
+	}
+
+	@Override
+	public Product findByIdUsingLock(Serializable id, LockMode lockMode) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	/*

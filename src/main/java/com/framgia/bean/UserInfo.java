@@ -16,6 +16,12 @@ public class UserInfo {
 	public UserInfo() {
 	}
 
+	public UserInfo(String email,String name, String phone) {
+		this.email = email;
+		this.name = name;
+		this.phone = phone;
+	}
+	
 	public UserInfo(Integer id, String email, String password, String name, String phone, String role,
 			List<CartInfo> carts) {
 		this.id = id;

@@ -1,10 +1,12 @@
-package com.framgia.controller;
+package com.framgia.controller.admins;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.framgia.controller.BaseController;
 
 @Controller
 @RequestMapping("/products")
@@ -18,6 +20,7 @@ public class ProductsController extends BaseController {
 	 * showProducts(@RequestParam("pageStart") int pageStart) { return
 	 * productService.getProducts(pageStart); }
 	 */
+	
 	// show information of product by single.jsp
 	@GetMapping(value = "/{productId}")
 	public String showSingleProduct(@PathVariable("productId") Integer productId, Model model) {
