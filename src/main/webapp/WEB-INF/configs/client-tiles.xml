@@ -13,7 +13,7 @@
 		<!-- Default CSS -->
 		<put-list-attribute name="client-css">
 			<add-attribute value="/assets/css/bootstrap.css"/>
-			<add-attribute value="/assets/css/angucomplete-alt.css"/>
+			
 			<add-attribute value="/assets/css/style.css"/>
 			<add-attribute value="/assets/css/etalage.css"/>
 			<add-attribute value="/assets/css/pagination.css"/>
@@ -21,7 +21,9 @@
 			<add-attribute value="/assets/alertify/themes/alertify.bootstrap.css"/>
 			<add-attribute value="/assets/alertify/themes/alertify.default.css"/>
 			
-			
+			<add-attribute value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.css"/>
+			<add-attribute value="https://material.angularjs.org/1.1.12/docs.css"/>
+			<add-attribute value="/assets/css/angucomplete.css"/>
 
 		</put-list-attribute>
 		
@@ -44,7 +46,7 @@
 			<add-attribute value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"/>
 			<add-attribute value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.js"/>
 			
-			<add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/angucomplete-alt/3.0.0/angucomplete-alt.min.js"/>
+			<!-- <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/angucomplete-alt/3.0.0/angucomplete-alt.min.js"/> -->
 			<add-attribute value="/assets/js/app.js"/>
 			<add-attribute value="/assets/js/controller/angular_controller.js"/>
 			<add-attribute value="/assets/js/service/angular_service.js"/>

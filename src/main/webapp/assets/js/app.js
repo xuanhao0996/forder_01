@@ -1,2 +1,2 @@
 'use strict'
-var App = angular.module('myApp', ['angucomplete-alt'])
+var App = angular.module('myApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
