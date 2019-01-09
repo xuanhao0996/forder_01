@@ -177,17 +177,35 @@
 						</select>
 					</div>
 					<div ng-app="myApp" ng-controller="ProductController as ctrl"
-						class="search">
-
-						<div angucomplete-alt id="txtAutocomplete"
-							placeholder="Type country name" pause="100"
-							selected-object="ctrl.SelectedProduct" local-data="ctrl.products"
-							search-fields="name" title-field="ProductName" minlength="1"
-							input-class="form-control" match-class="highlight"></div>
-						<!--display selected country-->
-						<div ng-show="ctrl.SelectedProduct">
-							{{ctrl.SelectedProduct.name}}</div>
-					</div>
+						layout="column" ng-cloak="" class="autocompletedemoCustomTemplate">
+						<md-content layout-padding="" class="fix-overflow" layout="column">						
+						    <form ng-submit="$event.preventDefault()">
+      				<md-autocomplete id="custom-template" ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" 
+      				md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" 
+     				md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" 
+     			    md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.name" md-min-length="0" 
+      				input-aria-label="Current Repository" placeholder="Search" md-menu-class="autocomplete-custom-template"
+     				md-menu-container-class="custom-container">
+        			<md-item-template>
+        			<a ng-href="<c:url value="/products/{{item.id}}"/>" >
+          <span class="item-title">
+          <img alt="" class="fix-angu-img md-avatar"  ng-src="{{item.image}}">
+            <span> {{item.name}} </span>
+          </span>
+          <span class="item-metadata">
+            <span>
+              <strong>{{item.price}}</strong> price
+            </span>
+            <span>
+              <strong>{{item.expiryDate}}</strong> expiryDate
+            </span>
+          </span>
+          <a/>
+        </md-item-template>
+      </md-autocomplete>
+    </form>
+						</md-content>
+						
 
 					<div class="clearfix"></div>
 				</div>

@@ -1,34 +1,79 @@
 'use strict';
-angular.module('myApp').controller('ProductController',['$scope','$http','ProductService',function($scope,$http,ProductService){
+angular.module('myApp').controller('ProductController',['$scope','$http','$timeout', '$q', '$log','ProductService',function($scope,$http,$timeout, $q, $log,ProductService){
 	var self = this;
-	self.simulateQuery = true;
+
 	
 	self.product = {id:null,category:null,name:'',price:0,code:'',image:'',desciption:'',expiryDate:''};
 	self.products=[];
 	
+	//search
+    self.simulateQuery = true;
+    self.isDisabled    = false;
+
+    self.repos         = loadAll();
+    self.querySearch   = querySearch;
+    self.selectedItemChange = selectedItemChange;
+    self.searchTextChange   = searchTextChange;
+	
 	fetchAllProduct();
 
-	self.SelectedProduct = null;  
-    //event fires when click on textbox  
-	self.SelectedProduct = function (selected) {  
-        if (selected) {  
-        	self.SelectedProduct = selected.originalObject;
-        }  
-    }  
+    function querySearch (query) {
+        var results = query ? self.repos.filter( createFilterFor(query) ) : self.repos,
+            deferred;
+        if (self.simulateQuery) {
+          deferred = $q.defer();
+          $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);
+          return deferred.promise;
+        } else {
+          return results;
+        }
+      }
+
+      function searchTextChange(text) {
+        $log.info('Text changed to ' + text);
+      }
+
+      function selectedItemChange(item) {
+        $log.info('Item changed to ' + JSON.stringify(item));
+      }
+      
+
 	
 	function fetchAllProduct(){
 		ProductService.fetchAllProduct()
 		.then(
 				function(d){
 					self.products = d;
-					console.log(self.products)
+					
 				},function(err){
-					 console.error('Error while fetching Haisan');
+					 console.error('Error while fetching Product');
 				}
 		);
 		
 	}
+    function loadAll() {
+    	ProductService.fetchAllProduct()
+		.then(
+				function(d){
+					self.repos = d;
+					var repon = self.repos;
+					return repon.map( function (repo) {
+			            repo.value = repo.name.toLowerCase();
+			            return repo;
+			          });
+				},function(err){
+					 console.error('Error while fetching Product');
+				}
+		);		
+        }
 
-	
+        function createFilterFor(query) {
+          var lowercaseQuery = query.toLowerCase();
+
+          return function filterFn(item) {
+            return (item.value.indexOf(lowercaseQuery) === 0);
+          };
+
+        }
 	
 }]);
