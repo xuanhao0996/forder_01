@@ -14,6 +14,9 @@
 		</c:if>
 		
 		<div class="row md-col-8">
+			<h2> <a href="${pageContext.request.contextPath}/admin/user/add">Add new user</a></h2>
+		</div>
+		<div class="row md-col-8">
 			<h2>Search From</h2>
 			<spring:url value="/${user.id}" var="searchActionUrl" />
 			<form:form action="searchActionUrl" method="GET" modelAttribute="user"

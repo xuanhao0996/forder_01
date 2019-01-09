@@ -3,16 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <spring:url value="/" var="urlHome" />
-<spring:url value="/admin/add" var="addActionUrl" />
-
+<spring:url value="/admin" var="addActionUrl" />
 <nav class="navbar navbar-inverse ">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="${urlHome}">Spring MVC Home</a>
+			<a class="navbar-brand" href="${urlHome}/user">Spring MVC Home</a>
 		</div>
 		<div id="navbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="${addActionUrl}">Add User</a></li>
+				<li class="active"><a href="${addActionUrl}">Manager User</a></li>
 			</ul>
 		</div>
 	</div>
