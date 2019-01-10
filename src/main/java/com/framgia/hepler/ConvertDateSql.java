@@ -11,6 +11,7 @@ public class ConvertDateSql {
 	private static final Logger logger = Logger.getLogger(ConvertDateSql.class);
 	public static String date_time_format = "yyyy-MM-dd HH:mm:ss";
 	public static String date_format = "yyyy-MM-dd";
+	public static String date_format_show = "dd/MM/yyyy";
 	private static final String TYPE_HH_MM ="HH:mm";
 
 	public static Date getDateNow() {

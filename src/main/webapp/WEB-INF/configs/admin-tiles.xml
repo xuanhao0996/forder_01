@@ -34,6 +34,7 @@
 		<put-list-attribute name="admin-js">
 			<add-attribute value="/assets/js/jquery.min.js"/>
 			<add-attribute value="/assets/alertify/js/alertify.min.js"/>
+			<add-attribute value="/assets/ckeditor/ckeditor.js"/>
 			
 			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"/>
 			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-animate.min.js"/>
@@ -44,10 +45,10 @@
 			<add-attribute value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"/>
 			<add-attribute value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.js"/>
 			
-			<!-- <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/angucomplete-alt/3.0.0/angucomplete-alt.min.js"/> -->
 			<add-attribute value="/assets/js/app.js"/>
 			<add-attribute value="/assets/js/controller/angular_controller.js"/>
 			<add-attribute value="/assets/js/service/angular_service.js"/>
+			<add-attribute value="/assets/js/directive/angular_directive.js"/>
 		</put-list-attribute>
 
 	</definition>

@@ -145,7 +145,7 @@
 							<option value="Yen" class="in-of">Yen</option>
 						</select>
 					</div>
-					<div ng-app="myApp" ng-controller="ProductController as ctrl"
+					<div ng-app="myAppSearch" ng-controller="ProductControllerSearch as ctrl"
 						layout="column" ng-cloak="" class="autocompletedemoCustomTemplate">
 						<md-content layout-padding="" class="fix-overflow" layout="column">						
 						    <form ng-submit="$event.preventDefault()">
@@ -169,6 +169,7 @@
               <strong>{{item.expiryDate}}</strong> expiryDate
             </span>
           </span>
+          
           <a/>
         </md-item-template>
       </md-autocomplete>
