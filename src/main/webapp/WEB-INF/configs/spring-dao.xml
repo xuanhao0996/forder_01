@@ -19,4 +19,15 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+
+	<bean id="OrderDAO" class="com.framgia.dao.impl.OrderDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrderDetailDAO" class="com.framgia.dao.impl.OrderDetailDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 </beans>

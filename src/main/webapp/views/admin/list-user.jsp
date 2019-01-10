@@ -14,7 +14,7 @@
 		</c:if>
 		
 		<div class="row md-col-8">
-			<h2> <a href="${pageContext.request.contextPath}/admin/user/add">Add new user</a></h2>
+			<h2> <a href="${pageContext.request.contextPath}/admin/users/add">Add new user</a></h2>
 		</div>
 		<div class="row md-col-8">
 			<h2>Search From</h2>
@@ -64,15 +64,15 @@
 										<c:if test="${users.role != 'ROLE_ADMIN' && users.role != 'ROLE_USER'}"> N/A </c:if>								
 									</td>
 									<td>
-										<spring:url value="/admin/user/${users.id}" var="detailActionUrl" />
+										<spring:url value="/admin/users/${users.id}" var="detailActionUrl" />
 										<button class="btn btn-info"
 											onclick="location.href='${detailActionUrl}'">Detail</button>
 											
-										<spring:url value="/admin/user/edit/${users.id}" var="editActionUrl" />
+										<spring:url value="/admin/users/edit/${users.id}" var="editActionUrl" />
 										<button class="btn btn-warning"
 											onclick="location.href='${editActionUrl}'">Edit</button>
 											
-										<spring:url value="/admin/user/delete/${users.id}" var="deleteActionUrl" />
+										<spring:url value="/admin/users/delete/${users.id}" var="deleteActionUrl" />
 										<button class="btn btn-danger"
 											onclick="location.href='${deleteActionUrl}'">Delete</button>
 									</td>

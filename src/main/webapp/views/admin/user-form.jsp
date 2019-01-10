@@ -9,11 +9,11 @@
 	<c:choose>
 		<c:when test="${status == 'add'}">
 			<h1>Add User</h1>
-			<spring:url value="/admin/user/create" var="userActionUrl" />
+			<spring:url value="/admin/users/create" var="userActionUrl" />
 		</c:when>
 		<c:otherwise>
 			<h1>Update User</h1>
-			<spring:url value="/admin/user/update" var="userActionUrl" />
+			<spring:url value="/admin/users/update" var="userActionUrl" />
 		</c:otherwise>
 	</c:choose>
 	<br />

@@ -16,11 +16,11 @@ import com.framgia.controller.BaseController;
 import com.framgia.hepler.ConvertUser;
 
 @Controller
-@RequestMapping("/admin/user")
+@RequestMapping("/admin/users")
 public class UserController extends BaseController {
 
-	private static final Logger logger = Logger.getLogger(AdminController.class);
-	@GetMapping("")
+	private static final Logger logger = Logger.getLogger(UserController.class);
+	@GetMapping()
 	public String index(Model model) {
 		model.addAttribute("user", new UserInfo());
 		model.addAttribute("users", ConvertUser.usersToUserInfos(userService.getAll()));
@@ -50,7 +50,7 @@ public class UserController extends BaseController {
 			redirectAttributes.addFlashAttribute("msg", "deleted");
 		}
 
-		return "redirect:/admin/user/list";
+		return "redirect:/admin/users";
 
 	}
 
@@ -77,6 +77,6 @@ public class UserController extends BaseController {
 	@PostMapping(value = {"/create", "/update"})
 	public String saveUser(@ModelAttribute("userForm") UserInfo userInfo, RedirectAttributes redirectAttrs) {
 		userService.saveOrUpdate(ConvertUser.userInfoToUser(userInfo));
-		return "redirect:/admin/user";
+		return "redirect:/admin/users";
 	}
 }
