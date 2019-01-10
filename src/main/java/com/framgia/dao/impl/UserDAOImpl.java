@@ -1,10 +1,10 @@
 package com.framgia.dao.impl;
 
-import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.LockMode;
+import org.hibernate.query.Query;
 
+import com.framgia.bean.PaginationResult;
 import com.framgia.dao.GenericDAO;
 import com.framgia.dao.UserDAO;
 import com.framgia.model.User;
@@ -33,9 +33,9 @@ public class UserDAOImpl extends GenericDAO<Integer, User> implements UserDAO {
 	}
 
 	@Override
-	public User findByIdUsingLock(Serializable id, LockMode lockMode) {
-		// TODO Auto-generated method stub
-		return null;
+	public PaginationResult<User> queryProducts(int page, int maxResult, int maxNavigationPage) {
+		@SuppressWarnings("rawtypes")
+		Query query = getSession().createQuery("from User order by id");
+		  return new PaginationResult<User>(query, page, maxResult, maxNavigationPage);
 	}
-
 }

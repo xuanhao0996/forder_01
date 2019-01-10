@@ -32,34 +32,36 @@
              <div class="clearfix"></div>
          </div>
          <div class="clearfix"></div>
-
+		
+		<div>
+			<h2>Confirm Infomation</h2>
+			<br>
+			<table style="width:100% ;border=1px solid black "  >
+				<thead>
+				<tr>
+					<th scope="col">Email</th>
+					<th scope="col">Username</th>
+					<th scope="col">Phone</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr>
+					<td>${sessionScope.currentUser.email}</td>
+					<td>${sessionScope.currentUser.name}</td>
+					<td>${sessionScope.currentUser.phone}</td>
+					</tr>
+				</tbody>
+			</table>
+		<br>
+		<br>
+		<h3><a href="#">Do you want change infomation ?</a></h3>
+		</div>
+		
          <div class="contact">
-             <h2 class=" contact-in">CHECKOUT </h2>
-
-            <%--  <div class="col-md-6 contact-top">
-                 <form method="POST" action="${pageContext.request.contextPath}/checkout">
-                     <h3>Want to work with me?</h3>
-                     <div>
-                         <span>Your Name</span>
-                         <input name="userName"  />
-                     </div>
-                     <div>
-                         <span>Your Email</span>	
-                         <input name="userEmail"  />
-                     </div>
-                     <div>
-                         <span>Your Address</span>	
-                         <input name="userAddress"  />
-                     </div>
-                     <input type="submit" value="SEND" >	
-                 </form>
-             </div> --%>
+         
+             <h2 class=" contact-in"><a href="${pageContext.request.contextPath}/checkout/acceptCheckout" >Checkout Now</a> </h2>
+             <h2 class=" contact-in"><a href="${pageContext.request.contextPath}" >Continue Buy</a> </h2>
              
-             <br><br>
-             <a href="${pageContext.request.contextPath}/checkout/acceptCheckout" >Checkout Now</a>
-             <br><br>
-             <a href="${pageContext.request.contextPath}">Continue Buy</a>
-             <br><br>
              <div class="clearfix"> </div>
          </div>
 

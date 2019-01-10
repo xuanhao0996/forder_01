@@ -9,14 +9,15 @@
 	<c:choose>
 		<c:when test="${status == 'add'}">
 			<h1>Add User</h1>
+			<spring:url value="/admin/user/create" var="userActionUrl" />
 		</c:when>
 		<c:otherwise>
 			<h1>Update User</h1>
+			<spring:url value="/admin/user/update" var="userActionUrl" />
 		</c:otherwise>
 	</c:choose>
 	<br />
 	<div class="col-md-6"  style="margin: 0 auto;">
-		<spring:url value="/admin/user/saveUser" var="userActionUrl" />
 		
 		<form:form class="form-horizontal" method="post" 
 			modelAttribute="userForm" action="${userActionUrl}/">
