@@ -18,9 +18,9 @@
 
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
-						<li><a href="wishlist.html"><spring:message code="list" />
+						<li><a href="${pageContext.request.contextPath}/order"><spring:message code="list" />
 								(0)</a></li>
-						<li><a href="account.html"> <spring:message
+						<li><a href="${pageContext.request.contextPath}/account"> <spring:message
 									code="account" /></a></li>
 						<li><a href="#"> <spring:message code="cart" /></a></li>
 						<li><a href="${pageContext.request.contextPath}/checkout"  onclick="checkLogin()"><spring:message

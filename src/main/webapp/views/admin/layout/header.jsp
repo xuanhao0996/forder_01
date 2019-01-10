@@ -7,11 +7,15 @@
 <nav class="navbar navbar-inverse ">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="${urlHome}/users">Spring MVC Home</a>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}">F-Order</a>
 		</div>
 		<div id="navbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="${addActionUrl}">Manager User</a></li>
+				<li class="active"><a href="${addActionUrl}/users">Manager User</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="${addActionUrl}/orders">Manager Order</a></li>
 			</ul>
 		</div>
 	</div>
