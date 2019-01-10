@@ -26,10 +26,11 @@ angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q
 		var defened = $q.defer();
 		$http.post(REST_SERVICE_URI,product).then(
 				function(response){
+				
 					defened.resolve(response.data);
 				},function(err){
 					 console.error('Error while creating Product');
-					 defened.reject(errResponse);
+					 defened.reject(err);
 				}
 		);
 		return defened.promise;
@@ -41,7 +42,7 @@ angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q
 					defened.resolve(response.data);
 				},function(err){
 					 console.error('Error while creating Product');
-					 defened.reject(errResponse);
+					 defened.reject(err);
 				}
 		);
 		return defened.promise;
@@ -53,7 +54,7 @@ angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q
 					defened.resolve(response.data);
 				},function(err){
 					 console.error('Error while delete Product');
-					 defened.reject(errResponse);
+					 defened.reject(err);
 				}
 		);
 		return defened.promise;

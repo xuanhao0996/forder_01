@@ -21,6 +21,21 @@
 		<script src="${jquery}" type="text/javascript"></script>
 		<script src="${bootstrapJs}" type="text/javascript"></script>
 		
+			<tilesx:useAttribute name="admin-css" id="listCss"
+		classname="java.util.List" />
+	<tilesx:useAttribute name="admin-js" id="listJs"
+		classname="java.util.List" />
+
+	
+	<c:forEach items="${listCss}" var="item">
+		<link rel="stylesheet" href="<c:url value='${item}'/>" type="text/css"
+			media="screen" />
+	</c:forEach>
+	
+	<c:forEach items="${listJs}" var="item">
+		<script src="<c:url value='${item}'/>" type="text/javascript"></script>
+	</c:forEach>
+	
 		<title><tiles:insertAttribute name="title" ignore="true" /></title>
 	</head>
 	<body>
