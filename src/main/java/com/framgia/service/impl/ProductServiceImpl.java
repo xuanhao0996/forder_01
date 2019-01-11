@@ -26,7 +26,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	@Override
 	public ProductInfo saveOrUpdate(ProductInfo entity) {
 		try {
-			return ConvertProduct.productToProductInfo(productDAO.saveOrUpdate(ConvertProduct.productInfoToProduct(entity)));
+			return ConvertProduct.productToProductInfo(productDAO.saveOrUpdate(ConvertProduct.ConvertproductInfoToProductToSave(entity)));
 		}catch (Exception e) {
 			logger.error(e.getMessage());
 			return null;

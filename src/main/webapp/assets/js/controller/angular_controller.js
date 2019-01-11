@@ -1,11 +1,15 @@
 'use strict';
 angular.module('myApp').controller('ProductController',['$scope','$http','$timeout', '$q', '$log','ProductService',function($scope,$http,$timeout, $q, $log,ProductService){
 	var self = this;
-
 	
-	self.product = {id:null,category:null,name:'',price:0,code:'',image:'',desciption:'',expiryDate:''};
+	
+	self.product = {id:null,category:1,name:'',price:0,code:'',image:'',desciption:'',expiryDate:new Date()};
 	self.products=[];
 	
+	self.isOpen = false;
+	
+	self.resetProduct = resetProduct;
+	self.submitProduct = submitProduct;
 	//search
     self.simulateQuery = true;
     self.isDisabled    = false;
@@ -37,8 +41,6 @@ angular.module('myApp').controller('ProductController',['$scope','$http','$timeo
         $log.info('Item changed to ' + JSON.stringify(item));
       }
       
-
-	
 	function fetchAllProduct(){
 		ProductService.fetchAllProduct()
 		.then(
@@ -75,5 +77,29 @@ angular.module('myApp').controller('ProductController',['$scope','$http','$timeo
           };
 
         }
+        
+        function createProduct(product){
+      		ProductService.createProduct(product).then(
+      				fetchAllProduct,
+      				function(err){
+      					 console.error('Error while create Product');
+      				}
+      		);
+      	}
+      	
+      	function submitProduct(){
+      		createProduct(self.product)
+      		if(self.product.id === null){
+      			
+      		}else{
+      			
+      		}
+      		resetProduct();
+      	}
+      	
+      	function resetProduct(){
+      		self.product = {id:null,category:null,name:'',price:0,code:'',image:'',desciption:'',expiryDate:''};
+      		$scope.productForm.$setPristine();
+      	}
 	
 }]);

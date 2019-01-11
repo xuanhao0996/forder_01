@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class ProductInfo {
 	private Integer id;
-	private CategoryInfo category;
+	private int category;
 	private String name;
 	private float price;
 	private String code;
@@ -20,7 +20,7 @@ public class ProductInfo {
 		this.id = id;
 	}
 
-	public ProductInfo(Integer id, CategoryInfo category, String name, float price, String code, String image,
+	public ProductInfo(Integer id, int category, String name, float price, String code, String image,
 			String desciption, Date expiryDate) {
 		this.id = id;
 		this.category = category;
@@ -33,7 +33,7 @@ public class ProductInfo {
 
 	}
 
-	public ProductInfo(CategoryInfo category, String name, float price, String code, String image, String desciption,
+	public ProductInfo(int category, String name, float price, String code, String image, String desciption,
 			Date expiryDate) {
 		super();
 		this.category = category;
@@ -54,11 +54,11 @@ public class ProductInfo {
 		this.id = id;
 	}
 
-	public CategoryInfo getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(CategoryInfo category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 

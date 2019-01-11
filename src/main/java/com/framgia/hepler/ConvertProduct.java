@@ -7,6 +7,7 @@ import java.util.function.Function;
 import org.springframework.beans.BeanUtils;
 
 import com.framgia.bean.ProductInfo;
+import com.framgia.model.Category;
 import com.framgia.model.Product;
 
 public class ConvertProduct {
@@ -37,5 +38,22 @@ public class ConvertProduct {
 		Product product = new Product();
 		BeanUtils.copyProperties(entity, product);
 		return product;
+	}
+	static Function<ProductInfo, Product> productInfoToProductToSave = (ProductInfo pInfo) -> {
+		Product p = new Product();
+
+		p.setName(pInfo.getName());
+		Category category = new  Category();
+		category.setId(pInfo.getCategory());
+		p.setCategory(category);
+		p.setPrice(pInfo.getPrice());
+		p.setImage(pInfo.getImage());
+		p.setCode(pInfo.getCode());
+		p.setDesciption(pInfo.getDesciption());
+		p.setExpiryDate(ConvertDateSql.convertDateToSave(pInfo.getExpiryDate()));
+		return p;
+	};
+	public static Product ConvertproductInfoToProductToSave(ProductInfo pInfo) {
+		return productInfoToProductToSave.apply(pInfo);
 	}
 }
