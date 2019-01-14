@@ -17,6 +17,9 @@ public class ConvertProduct {
 		pInfo.setName(p.getName());
 		pInfo.setPrice(p.getPrice());
 		pInfo.setImage(p.getImage());
+		pInfo.setCode(p.getCode());
+		pInfo.setDesciption(p.getDesciption());
+		pInfo.setExpiryDate(p.getExpiryDate());
 		return pInfo;
 	};
 	

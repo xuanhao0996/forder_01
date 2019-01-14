@@ -60,3 +60,25 @@ angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q
 		return defened.promise;
 	}
 }]);
+
+angular.module('myAppSearch').factory('ProductServiceSearch',['$http','$q',function($http,$q){
+	 var REST_SERVICE_URI = 'http://localhost:8083/forder_01/products/';
+	 var factory = {
+			 fetchAllProduct:fetchAllProduct,	 
+	 };
+	 return factory;
+	 
+	 function fetchAllProduct(){
+		 var defened = $q.defer();
+		 $http.get(REST_SERVICE_URI).then(
+				 function(response){
+					 defened.resolve(response.data)
+				 },function(err){
+					 console.error('Error while fetching Product');
+					 defened.resolve(err)
+				 }
+		 );
+		 return defened.promise;
+	 }
+
+}]);

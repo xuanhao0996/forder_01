@@ -43,8 +43,7 @@ public class ProductDAOImpl extends GenericDAO<Integer, Product> implements Prod
 
 	@Override
 	public Product findByIdUsingLock(Serializable id, LockMode lockMode) {
-		// TODO Auto-generated method stub
-		return null;
+		return  getSession().load(Product.class, id,lockMode);
 	}
 	
 	/*

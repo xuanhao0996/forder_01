@@ -4,9 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.LockMode;
 
 import com.framgia.bean.ProductInfo;
+import com.framgia.hepler.ConvertDateSql;
 import com.framgia.hepler.ConvertProduct;
+import com.framgia.model.Category;
+import com.framgia.model.Product;
 import com.framgia.service.ProductService;
 
 public class ProductServiceImpl extends BaseServiceImpl implements ProductService {
@@ -25,7 +29,23 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 
 	@Override
 	public ProductInfo saveOrUpdate(ProductInfo entity) {
+		
 		try {
+			if(entity.getId() != null) {
+				Product updateProduct = new Product();
+				
+				updateProduct.setId(entity.getId());
+				updateProduct.setName(entity.getName());
+				Category category = new  Category();
+				category.setId(entity.getCategory());
+				updateProduct.setCategory(category);
+				updateProduct.setPrice(entity.getPrice());
+				updateProduct.setImage(entity.getImage());
+				updateProduct.setCode(entity.getCode());
+				updateProduct.setDesciption(entity.getDesciption());
+				updateProduct.setExpiryDate(ConvertDateSql.convertDateToSave(entity.getExpiryDate()));
+				return ConvertProduct.productToProductInfo(productDAO.saveOrUpdate(updateProduct));
+			}
 			return ConvertProduct.productToProductInfo(productDAO.saveOrUpdate(ConvertProduct.ConvertproductInfoToProductToSave(entity)));
 		}catch (Exception e) {
 			logger.error(e.getMessage());
@@ -35,8 +55,12 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 
 	@Override
 	public boolean delete(ProductInfo entity) {
+		Product deleteProduct = getProductDAO().findByIdUsingLock(entity.getId(), LockMode.PESSIMISTIC_WRITE);
 		try {
-			getProductDAO().delete(ConvertProduct.productInfoToProduct(entity));
+			if(deleteProduct == null) {
+				return false;
+			}
+			getProductDAO().delete(deleteProduct);
 			return true;
 		} catch (Exception e) {
 			logger.error(e.getMessage());

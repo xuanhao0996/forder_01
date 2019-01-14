@@ -5,18 +5,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-ckeditor/0.2.1/ng-ckeditor.min.js"></script>
 <div ng-app="myApp" class="generic-container" ng-controller="ProductController as ctrl">
  	 <table class="table table-hover">
 		<thead>
 			<tr>
 				<th ng-click="predicate = 'ctrl.products.id'; reverse=!reverse">ID Product</th>
-				<th>category</th>
-				<th ng-click="predicate = 'ctrl.products.name'; reverse=!reverse">name</th>
-				<th ng-click="predicate = 'ctrl.products.price'; reverse=!reverse">price</th>
-				<th>code</th>
-				<th>image</th>
-				<th>desciption</th>
-				<th>expiryDate</th>
+				<th>Category</th>
+				<th ng-click="predicate = 'ctrl.products.name'; reverse=!reverse">Name Product</th>
+				<th ng-click="predicate = 'ctrl.products.price'; reverse=!reverse">Price</th>
+				<th>Code</th>
+				<th>Image</th>
+				<th>Desciption</th>
+				<th>Expiry Date</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -29,9 +30,10 @@
 					<td><span ng-bind="u.code"></span></td>
 					<td><img alt="" class="fix-angu-img md-avatar"  ng-src="{{u.image}}"></span></td>
 					<td><span ng-bind="u.desciption"></span></td>
-					<td><span ng-bind="u.expiryDate"></span></td>
-<!-- 					<td><button ng-click="ctrl.edit(u.mahaisan)"class="btn btn-success custom-width">Edit</button> 
-					<button ng-click="ctrl.remove(u.mahaisan)" class="btn btn-success custom-width">Delete</button> -->
+					<td><span ng-bind="u.expiryDate | date:'dd/MM/yyyy' "></span></td>
+					<td>
+					<button ng-click="ctrl.editProduct(u.id)"class="btn btn-success custom-width">Edit</button> 
+					<button ng-click="ctrl.removeProduct(u.id)" class="btn btn-success custom-width">Delete</button>
 					</td>
 				</tr>
 		
@@ -60,10 +62,11 @@
 		<p>image</p>
 		<input name="image" ng-model="ctrl.product.image" type="text">
 		<p>desciption</p>
-		<input name="desciption" ng-model="ctrl.product.desciption" type="text">
+		<textarea name="desciption" ng-model="ctrl.product.desciption" rows="20" cols="20" data-ck-editor></textarea>
+		<!-- <input name="desciption" ng-model="ctrl.product.desciption" type="text"> -->
 		<p>expiryDate</p>
 		<input name="expiryDate"  ng-model="ctrl.product.expiryDate" type="date">
 		<br/><br/>
-		<input type="submit" value="add">
+		<input type="submit" value="{{!ctrl.product.id ? 'Add' : 'Update'}}">
 	</form>
  </div>
