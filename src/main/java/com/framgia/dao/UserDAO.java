@@ -13,4 +13,6 @@ public interface UserDAO extends BaseDAO<Integer, User> {
 	List<User> getAll();
 
 	PaginationResult<User> queryProducts(int page, int maxResult, int maxNavigationPage);
+
+	User findByOrderId(int indexOf);
 }

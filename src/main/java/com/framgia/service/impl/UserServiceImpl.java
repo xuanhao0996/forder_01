@@ -83,10 +83,19 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 	@Override
 	public boolean deleteUser(Integer id) {
 		try {
-			User user = getUserDAO().findByIdUsingLock(id, LockMode.PESSIMISTIC_WRITE);
-			return delete(user);
+			return delete(getUserDAO().findByIdUsingLock(id, LockMode.PESSIMISTIC_WRITE));
 		}catch (Exception e) {
 			throw(e);
+		}
+	}
+
+	@Override
+	public UserInfo findByOrderId(int indexOf) {
+		try {
+			return ConvertUser.userToUserInfo(userDAO.findByOrderId(indexOf));
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+			return null;
 		}
 	}
 	

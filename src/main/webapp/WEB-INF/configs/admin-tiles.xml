@@ -83,4 +83,17 @@
 		<put-attribute name="body"
 			value="/views/admin/product.jsp" />
 	</definition>
+	
+	<definition name="list-order" extends="baseLayout">
+		<put-attribute name="title" value="Page-Product" />
+		<put-attribute name="body"
+			value="/views/admin/list-order.jsp" />
+	</definition>
+	
+	<definition name="order-detail" extends="baseLayout">
+		<put-attribute name="title" value="Page-Product" />
+		<put-attribute name="body"
+			value="/views/admin/order-detail.jsp" />
+	</definition>
+	
 </tiles-definitions>

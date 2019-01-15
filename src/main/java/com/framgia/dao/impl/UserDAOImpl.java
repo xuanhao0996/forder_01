@@ -38,4 +38,11 @@ public class UserDAOImpl extends GenericDAO<Integer, User> implements UserDAO {
 		Query query = getSession().createQuery("from User order by id");
 		  return new PaginationResult<User>(query, page, maxResult, maxNavigationPage);
 	}
+
+	@Override
+	public User findByOrderId(int indexOf) {
+		return (User) getSession().createQuery("select u from User u "
+										+ "inner join Order o on u.id = o.user.id "
+										+ "where o.id = :id").setParameter("id", indexOf).getSingleResult();
+	}
 }

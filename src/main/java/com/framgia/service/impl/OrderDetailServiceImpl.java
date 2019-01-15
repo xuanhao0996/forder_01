@@ -26,7 +26,7 @@ public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDeta
 		try {
 			return orderDetailDAO.saveOrUpdate(entity);
 		} catch (Exception e) {
-			throw(e);
+			throw (e);
 		}
 	}
 
@@ -38,25 +38,30 @@ public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDeta
 
 	@Override
 	public void createOrderDetail(HttpSession httpSession, OrderInfo orderInfo) {
-		@SuppressWarnings("unchecked")
-		HashMap<Integer, CartDetailInfo> cartItems = (HashMap<Integer, CartDetailInfo>) httpSession.getAttribute("myCartItems");
-        if (cartItems == null) {
-            cartItems = new HashMap<>();
-        }
-        //set parameter of orderDetail
-        for(Map.Entry<Integer, CartDetailInfo> entry : cartItems.entrySet()){
-        	OrderDetailInfo orderDetailInfo = new OrderDetailInfo();
-        	orderDetailInfo.setOrder(orderInfo);
-        	orderDetailInfo.setProduct(entry.getValue().getProduct());
-        	orderDetailInfo.setProductPrice(entry.getValue().getProduct().getPrice());
-        	orderDetailInfo.setQuantity(entry.getValue().getQuantity());
-        	saveOrUpdate(ConvertOrderDetail.infoToOrderDetail(orderDetailInfo));
-        }
-        
-        cartItems = new HashMap<>();
-        httpSession.setAttribute("myCartItems", cartItems);
-        httpSession.setAttribute("myCartTotal", 0);
-        httpSession.setAttribute("myCartNum", 0);
-	}
+		try {
+			@SuppressWarnings("unchecked")
+			HashMap<Integer, CartDetailInfo> cartItems = (HashMap<Integer, CartDetailInfo>) httpSession
+					.getAttribute("myCartItems");
+			if (cartItems == null) {
+				cartItems = new HashMap<>();
+			}
+			// set parameter of orderDetail
+			for (Map.Entry<Integer, CartDetailInfo> entry : cartItems.entrySet()) {
+				OrderDetailInfo orderDetailInfo = new OrderDetailInfo();
+				orderDetailInfo.setOrder(orderInfo);
+				orderDetailInfo.setProduct(entry.getValue().getProduct());
+				orderDetailInfo.setProductPrice(entry.getValue().getProduct().getPrice());
+				orderDetailInfo.setQuantity(entry.getValue().getQuantity());
+				saveOrUpdate(ConvertOrderDetail.infoToOrderDetail(orderDetailInfo));
+			}
 
+			cartItems = new HashMap<>();
+			httpSession.setAttribute("myCartItems", cartItems);
+			httpSession.setAttribute("myCartTotal", 0);
+			httpSession.setAttribute("myCartNum", 0);
+
+		} catch (Exception e) {
+			throw (e);
+		}
+	}
 }

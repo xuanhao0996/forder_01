@@ -13,6 +13,11 @@ public class ConvertOrder {
 		OrderInfo info = new OrderInfo();
 		BeanUtils.copyProperties(order, info);
 		info.setUser(ConvertUser.userToUserInfo(order.getUser()));
+		if(order.getStatus() == 0) {
+			info.setStatus(STATUS.WAITING.toString());
+		}else {
+			info.setStatus(STATUS.ACCEPTED.toString());
+		}
 		return info;
 	}
 	
@@ -20,24 +25,29 @@ public class ConvertOrder {
 		Order order = new Order();
 		BeanUtils.copyProperties(info, order);
 		order.setUser(ConvertUser.userInfoToUser(info.getUser()));
+		if (STATUS.WAITING.toString().equals(info.getStatus())) {
+			order.setStatus(0);
+		} else {
+			order.setStatus(1);
+		}
 		return order;
 	}
 	
 	public static List<Order> listInfoToOrders( List<OrderInfo> list) {
-		List<Order> list2 = new ArrayList<Order>();
+		List<Order> orders = new ArrayList<Order>();
 		for (OrderInfo info : list) {
 			Order order = infoToOrder(info);
-			list2.add(order);
+			orders.add(order);
 		}
-		return list2;
+		return orders;
 	}
 	
 	public static List<OrderInfo> listOrderToListInfo(List<Order> list){
-		List<OrderInfo> infos = new ArrayList<>();
+		List<OrderInfo> orderInfos = new ArrayList<>();
 		for (Order order : list) {
 			OrderInfo info = orderToInfo(order);
-			infos.add(info);
+			orderInfos.add(info);
 		}
-		return infos;
+		return orderInfos;
 	}
 }

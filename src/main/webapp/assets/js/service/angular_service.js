@@ -1,6 +1,6 @@
 'use strict';
 angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q){
-	 var REST_SERVICE_URI = 'http://localhost:8083/forder_01/products/';
+	 var REST_SERVICE_URI = 'http://localhost:8080/forder_01/products/';
 	 var factory = {
 			 fetchAllProduct:fetchAllProduct,
 			 createProduct:createProduct,
@@ -62,7 +62,7 @@ angular.module('myApp').factory('ProductService',['$http','$q',function($http,$q
 }]);
 
 angular.module('myAppSearch').factory('ProductServiceSearch',['$http','$q',function($http,$q){
-	 var REST_SERVICE_URI = 'http://localhost:8083/forder_01/products/';
+	 var REST_SERVICE_URI = 'http://localhost:8080/forder_01/products/';
 	 var factory = {
 			 fetchAllProduct:fetchAllProduct,	 
 	 };

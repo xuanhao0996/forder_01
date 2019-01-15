@@ -16,30 +16,47 @@
 				<c:if test="${empty msg}">
 					<div class="panel panel-info">
 						<div class="panel-heading">
-							<h3 class="panel-title">Profile User</h3>
+							<h3 class="panel-title">Order Detail</h3>
 						</div>
 						<div class="panel-body">
 							<div class="row">
-								<div class="col-md-3 col-lg-3 " align="center">
+								<!-- <div class="col-md-3 col-lg-3 " align="center">
 									<img alt="User Pic"
 										src="https://cdn1.iconfinder.com/data/icons/business-charts/512/customer-512.png"
 										class="img-circle img-responsive">
-								</div>
+								</div> -->
 								<div class=" col-md-9 col-lg-9 ">
 									<table class="table table-user-information">
 										<tbody>
 											<tr>
-												<td>Name</td>
-												<td>${user.name}</td>
+												<td>Id</td>
+												<td>${order.id}</td>
 											</tr>
 											<tr>
-												<td>Email</td>
-												<td>${user.email}</td>
+												<td>Customer id</td>
+												<td>${order.getUser().getId()}</td>
 											</tr>
 											<tr>
-												<td>Phone number</td>
-												<td>${user.phone}</td>
+												<td>Create date</td>
+												<td>${order.createDate}</td>
 											</tr>
+											<tr>
+												<td>Shipping id</td>
+												<td>Shipping id</td>
+											</tr>
+											<tr>
+												<td>Payment id</td>
+												<td>Shipping id</td>
+											</tr>
+											<tr>
+												<td>Total bill</td>
+												<td>${order.totalBill}</td>
+											</tr>
+											<tr>
+												<td>Status</td>
+												<td>${order.status}</td>
+											</tr>
+											
 										</tbody>
 									</table>
 								</div>
@@ -47,11 +64,11 @@
 						</div>
 						<div class="panel-footer" style="height: 50px; !important" >
 							<span class="pull-right">
-								<a href="${pageContext.request.contextPath}/admin/users/edit/${user.id}"
+								<a href="${pageContext.request.contextPath}/admin/orders/edit/${order.id}"
 									data-original-title="Edit this user" data-toggle="tooltip"
 									type="button" class="btn btn-sm btn-warning"><i
 										class="glyphicon glyphicon-edit"></i></a>
-								<a href="${pageContext.request.contextPath}/admin/users/delete/${user.id}"
+								<a href="${pageContext.request.contextPath}/admin/orders/delete/${order.id}"
 									data-original-title="Remove this user" data-toggle="tooltip"
 									type="button" class="btn btn-sm btn-danger"><i
 									class="glyphicon glyphicon-remove"></i></a>

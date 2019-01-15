@@ -9,8 +9,7 @@ public class UserInfo {
 	private String name;
 	private String phone;
 	private String role;
-	// private List<Order> orders = new ArrayList<>();
-	// private List<Address> addresses = new ArrayList<>();
+	private List<OrderInfo> orders;
 	private List<CartInfo> carts;
 
 	public UserInfo() {
@@ -22,8 +21,22 @@ public class UserInfo {
 		this.phone = phone;
 	}
 	
+	
+	
 	public UserInfo(Integer id, String email, String password, String name, String phone, String role,
-			List<CartInfo> carts) {
+			List<OrderInfo> orders, List<CartInfo> carts) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+		this.role = role;
+		this.orders = orders;
+		this.carts = carts;
+	}
+
+	public UserInfo(Integer id, String email, String password, String name, String phone, String role,
+			List<CartInfo> carts){
 		this.id = id;
 		this.email = email;
 		this.password = password;
@@ -98,4 +111,13 @@ public class UserInfo {
 		this.carts = carts;
 	}
 
+	public List<OrderInfo> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<OrderInfo> orders) {
+		this.orders = orders;
+	}
+	
+	
 }

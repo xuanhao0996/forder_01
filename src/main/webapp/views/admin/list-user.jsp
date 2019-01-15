@@ -68,11 +68,11 @@
 										<button class="btn btn-info"
 											onclick="location.href='${detailActionUrl}'">Detail</button>
 											
-										<spring:url value="/admin/users/edit/${users.id}" var="editActionUrl" />
+										<spring:url value="/admin/users/${users.id}/edit" var="editActionUrl" />
 										<button class="btn btn-warning"
 											onclick="location.href='${editActionUrl}'">Edit</button>
 											
-										<spring:url value="/admin/users/delete/${users.id}" var="deleteActionUrl" />
+										<spring:url value="/admin/users/${users.id}/delete" var="deleteActionUrl" />
 										<button class="btn btn-danger"
 											onclick="location.href='${deleteActionUrl}'">Delete</button>
 									</td>
