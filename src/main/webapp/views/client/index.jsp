@@ -47,7 +47,7 @@
 				<c:forEach items="${products}" var="product">
 					<div class="col-md-3 md-col">
 						<div class="col-md">
-							<a href="${pageContext.request.contextPath}/products/${product.id}"><img src="${product.image}" alt="" /></a>
+							<a href="${pageContext.request.contextPath}/products/show/${product.id}"><img src="${product.image}" alt="" /></a>
 							<div class="top-content">
 								<h5><a href="single.html">"${product.name}"</a></h5>
 								<div class="white">
