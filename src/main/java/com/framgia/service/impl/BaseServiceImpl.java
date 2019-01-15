@@ -1,6 +1,8 @@
 package com.framgia.service.impl;
 
 import com.framgia.dao.CategoryDAO;
+import com.framgia.dao.OrderDAO;
+import com.framgia.dao.OrderDetailDAO;
 import com.framgia.dao.ProductDAO;
 import com.framgia.dao.UserDAO;
 
@@ -9,7 +11,9 @@ public class BaseServiceImpl {
 	protected ProductDAO productDAO;
 	protected CategoryDAO categoryDAO;
 	protected UserDAO userDAO;
-
+	protected OrderDAO orderDAO;
+	protected OrderDetailDAO orderDetailDAO;
+	
 	public ProductDAO getProductDAO() {
 		return productDAO;
 	}
@@ -34,4 +38,20 @@ public class BaseServiceImpl {
 		this.userDAO = userDAO;
 	}
 
+	public OrderDAO getOrderDAO() {
+		return orderDAO;
+	}
+
+	public void setOrderDAO(OrderDAO orderDAO) {
+		this.orderDAO = orderDAO;
+	}
+
+	public OrderDetailDAO getOrderDetailDAO() {
+		return orderDetailDAO;
+	}
+
+	public void setOrderDetailDAO(OrderDetailDAO orderDetailDAO) {
+		this.orderDetailDAO = orderDetailDAO;
+	}
+	
 }

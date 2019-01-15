@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.framgia.hepler.GoogleUtils;
 import com.framgia.service.CategoryService;
+import com.framgia.service.OrderDetailService;
+import com.framgia.service.OrderService;
 import com.framgia.service.ProductService;
 import com.framgia.service.UserService;
 
@@ -20,4 +22,9 @@ public class BaseController {
 	@Autowired
 	protected UserService userService;
 	
+	@Autowired
+	protected OrderService orderService;
+	
+	@Autowired
+	protected OrderDetailService orderDetailService;
 }

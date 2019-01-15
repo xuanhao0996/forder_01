@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class OrderInfo {
 	private Integer id;
-	/*private Payment payment;
-	private ShippingInfo shippingInfo;*/
+	//private Payment payment;
+	//private ShippingInfo shippingInfo;
 	private UserInfo user;
 	private Date createDate;
 	private float totalBill;

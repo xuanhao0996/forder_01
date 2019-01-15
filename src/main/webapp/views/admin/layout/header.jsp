@@ -7,7 +7,7 @@
 <nav class="navbar navbar-inverse ">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="${urlHome}/user">Spring MVC Home</a>
+			<a class="navbar-brand" href="${urlHome}/users">Spring MVC Home</a>
 		</div>
 		<div id="navbar">
 			<ul class="nav navbar-nav navbar-right">
