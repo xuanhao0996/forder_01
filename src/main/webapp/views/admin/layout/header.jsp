@@ -17,6 +17,9 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="${addActionUrl}/orders">Manager Order</a></li>
 			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="${addActionUrl}/products/">Manager Products</a></li>
+			</ul>
 		</div>
 	</div>
 </nav>

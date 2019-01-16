@@ -74,9 +74,12 @@
 									</td>
 								</tr>
 							</c:forEach>
-						</tbody>
+					</tbody>
 					</table>
 				</fieldset>
+				
+						<a href="${pageContext.request.contextPath}/admin/orders/excel"> Export </a>
+				
 			</div>
 		</div>
 	</div>

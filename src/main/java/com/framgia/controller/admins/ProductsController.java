@@ -11,7 +11,7 @@ import com.framgia.controller.BaseController;
 @Controller
 public class ProductsController extends BaseController {
 
-	@RequestMapping(value = "/products/{productId}",method = RequestMethod.GET)
+	@RequestMapping(value = "/products/show/{productId}",method = RequestMethod.GET)
 	public String showSingleProduct(@PathVariable("productId") Integer productId, Model model) {
 		model.addAttribute("categories", categoryService.getAll());
 		model.addAttribute("product", productService.findById(productId));
