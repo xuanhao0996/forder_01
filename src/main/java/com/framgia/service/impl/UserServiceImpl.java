@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.framgia.bean.UserInfo;
+import com.framgia.exception.EmailExistsException;
 import com.framgia.hepler.ConvertUser;
 import com.framgia.model.User;
 import com.framgia.service.UserService;
@@ -98,5 +99,27 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 			return null;
 		}
 	}
+
+	@Override
+	public User registerNewUserAccount(User accountDto) throws EmailExistsException {
+		if (emailExist(accountDto.getEmail())) {   
+            throw new EmailExistsException("There is an account with that email address:" 
+            			+ accountDto.getEmail());
+        }
+		User user = new User();    
+        user.setName(accountDto.getName());
+        user.setPassword(accountDto.getPassword());
+        user.setPhone(accountDto.getPhone());
+        user.setEmail(accountDto.getEmail());
+        user.setRole(1);
+        return userDAO.saveOrUpdate(user);       
+	}
 	
+	private boolean emailExist(String email) {
+        User user = userDAO.findByEmail(email);
+        if (user != null) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -136,7 +136,7 @@
 						<li><a href="#"><i class="twitter"> </i></a></li>
 
 						<li><a
-							href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8083/forder_01/login-google&response_type=code&client_id=650605713330-9s9j72fd23vgfqdlc380mh0re75mj7cm.apps.googleusercontent.com&approval_prompt=force">Gmail</a></li>
+							href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/forder_01/login-google&response_type=code&client_id=650605713330-9s9j72fd23vgfqdlc380mh0re75mj7cm.apps.googleusercontent.com&approval_prompt=force">Gmail</a></li>
 					</ul>
 					<div class="down-top">
 						<select class="in-drop">
@@ -156,7 +156,7 @@
       				input-aria-label="Current Repository" placeholder="Search" md-menu-class="autocomplete-custom-template"
      				md-menu-container-class="custom-container">
         			<md-item-template>
-        			<a ng-href="<c:url value="/products/{{item.id}}"/>" >
+        			<a ng-href="<c:url value="/products/show/{{item.id}}"/>" >
           <span class="item-title">
           <img alt="" class="fix-angu-img md-avatar"  ng-src="{{item.image}}">
             <span> {{item.name}} </span>

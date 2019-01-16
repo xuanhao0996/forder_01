@@ -2,11 +2,24 @@ package com.framgia.bean;
 
 import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class UserInfo {
 	private Integer id;
+	
+	@NotNull
+	@NotEmpty
 	private String email;
+	
+	@NotNull
+	@NotEmpty
 	private String password;
+	
+	@NotNull
+	@NotEmpty
 	private String name;
+	
 	private String phone;
 	private String role;
 	private List<OrderInfo> orders;

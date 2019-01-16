@@ -4,54 +4,74 @@
 <tiles-definitions>
 
 	<!-- Base Definition -->
-	<definition name="client-baseLayout" template="/views/client/layout/baseLayout.jsp">
+	<definition name="client-baseLayout"
+		template="/views/client/layout/baseLayout.jsp">
 		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/views/client/layout/header.jsp" />
+		<put-attribute name="header"
+			value="/views/client/layout/header.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
-		
+		<put-attribute name="footer"
+			value="/views/client/layout/footer.jsp" />
+
 		<!-- Default CSS -->
 		<put-list-attribute name="client-css">
-			<add-attribute value="/assets/css/bootstrap.css"/>
-			
-			<add-attribute value="/assets/css/style.css"/>
-			<add-attribute value="/assets/css/etalage.css"/>
-			<add-attribute value="/assets/css/pagination.css"/>
-			<add-attribute value="/assets/alertify/themes/alertify.core.css"/>
-			<add-attribute value="/assets/alertify/themes/alertify.bootstrap.css"/>
-			<add-attribute value="/assets/alertify/themes/alertify.default.css"/>
-			
-			<add-attribute value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.css"/>
-			<add-attribute value="https://material.angularjs.org/1.1.12/docs.css"/>
-			<add-attribute value="/assets/css/angucomplete.css"/>
+			<add-attribute value="/assets/css/bootstrap.css" />
+
+			<add-attribute value="/assets/css/style.css" />
+			<add-attribute value="/assets/css/etalage.css" />
+			<add-attribute value="/assets/css/pagination.css" />
+			<add-attribute
+				value="/assets/alertify/themes/alertify.core.css" />
+			<add-attribute
+				value="/assets/alertify/themes/alertify.bootstrap.css" />
+			<add-attribute
+				value="/assets/alertify/themes/alertify.default.css" />
+
+			<add-attribute
+				value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.css" />
+			<add-attribute
+				value="https://material.angularjs.org/1.1.12/docs.css" />
+			<add-attribute value="/assets/css/angucomplete.css" />
 
 		</put-list-attribute>
-		
+
 		<!-- Default JS -->
 		<put-list-attribute name="client-js">
-			<add-attribute value="/assets/js/jquery.min.js"/>
-			<add-attribute value="/assets/js/jquery.etalage.min.js"/>
-			<add-attribute value="/assets/js/jquery.flexisel.js"/>
-			<add-attribute value="/assets/js/nav.js"/>
-			<add-attribute value="/assets/js/responsiveslides.min.js"/>
-			<add-attribute value="/assets/js/client-ajax.js"/>
-			<add-attribute value="/assets/alertify/js/alertify.min.js"/>
-			
-			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"/>
-			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-animate.min.js"/>
-			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.min.js"/>
-			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-aria.min.js"/>
-			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-messages.min.js"/>
-			<add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"/>
-			<add-attribute value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"/>
-			<add-attribute value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.js"/>
-			
+			<add-attribute value="/assets/js/jquery.min.js" />
+			<add-attribute value="/assets/js/jquery.etalage.min.js" />
+			<add-attribute value="/assets/js/jquery.flexisel.js" />
+			<add-attribute value="/assets/js/nav.js" />
+			<add-attribute
+				value="/assets/js/responsiveslides.min.js" />
+			<add-attribute value="/assets/js/client-ajax.js" />
+			<add-attribute
+				value="/assets/alertify/js/alertify.min.js" />
+
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js" />
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-animate.min.js" />
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.min.js" />
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-aria.min.js" />
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-messages.min.js" />
+			<add-attribute
+				value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js" />
+			<add-attribute
+				value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js" />
+			<add-attribute
+				value="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.12/angular-material.js" />
+
 			<!-- <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/angucomplete-alt/3.0.0/angucomplete-alt.min.js"/> -->
-			<add-attribute value="/assets/js/app.js"/>
-			<add-attribute value="/assets/js/controller/angular_controller.js"/>
-			<add-attribute value="/assets/js/service/angular_service.js"/>
+			<add-attribute value="/assets/js/app.js" />
+			<add-attribute
+				value="/assets/js/controller/angular_controller.js" />
+			<add-attribute
+				value="/assets/js/service/angular_service.js" />
 		</put-list-attribute>
-		
+
 		<!-- Default FONTS -->
 		<put-list-attribute name="client-fonts">
 
@@ -61,39 +81,59 @@
 	<!-- home -->
 	<definition name="home" extends="client-baseLayout">
 		<put-attribute name="title" value="HOME" />
-		
-		<put-attribute name="body" value="/views/client/index.jsp" />
+
+		<put-attribute name="body"
+			value="/views/client/index.jsp" />
 	</definition>
-	
+
 	<!-- Product by category -->
-	<definition name="client-category" extends="client-baseLayout">
+	<definition name="client-category"
+		extends="client-baseLayout">
 		<put-attribute name="title" value="HOME" />
-		
-		<put-attribute name="body" value="/views/client/products.jsp" />
+
+		<put-attribute name="body"
+			value="/views/client/products.jsp" />
 	</definition>
-	
+
 	<!-- Show single product by id -->
-	<definition name="client-single-product" extends="client-baseLayout">
-	<put-attribute name="title" value="" />
-		<put-attribute name="body" value="/views/client/single.jsp"/>
+	<definition name="client-single-product"
+		extends="client-baseLayout">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/views/client/single.jsp" />
 	</definition>
-	
+
 	<!-- Show cart -->
 	<definition name="client-cart" extends="client-baseLayout">
-	<put-attribute name="title" value="" />
-		<put-attribute name="body" value="/views/client/carts.jsp"/>
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/views/client/carts.jsp" />
 	</definition>
-	
+
 	<!-- Checkout -->
-	<definition name="client-checkout" extends="client-baseLayout">
-	<put-attribute name="title" value="" />
-		<put-attribute name="body" value="/views/client/checkout.jsp"/>
+	<definition name="client-checkout"
+		extends="client-baseLayout">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/views/client/checkout.jsp" />
 	</definition>
-	
-	<definition name="client-success" extends="client-baseLayout">
-	<put-attribute name="title" value="" />
-		<put-attribute name="body" value="/views/client/success-buy.jsp"/>
+
+	<definition name="client-success"
+		extends="client-baseLayout">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body"
+			value="/views/client/success-buy.jsp" />
 	</definition>
-	
-	
+
+	<definition name="/login" extends="client-baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body"
+			value="/views/client/login.jsp" />
+	</definition>
+
+	<definition name="register" extends="client-baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body"
+			value="/views/client/registrantion.jsp" />
+	</definition>
 </tiles-definitions>

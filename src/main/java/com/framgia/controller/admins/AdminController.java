@@ -18,22 +18,11 @@ public class AdminController extends BaseController {
 
 	private static final Logger logger = Logger.getLogger(AdminController.class);
 
-	@GetMapping()
+	@GetMapping
 	public String adminHome(HttpSession httpSession, Model model) {
 		logger.info("home page");
-		UserInfo currentUser = (UserInfo) httpSession.getAttribute("currentUser");
-		if(currentUser == null) {
-			//show message first login
-			return "redirect:/";
-		}
-		if(currentUser.getRole().equals("USER")) {
-			//show message : u aren't admin
-			//return home
-			return "redirect:/";
-		}else {	
-			model.addAttribute("user", new UserInfo());
-			model.addAttribute("users", ConvertUser.usersToUserInfos(userService.getAll()));
-			return "admin-home";
-		}
+		model.addAttribute("user", new UserInfo());
+		model.addAttribute("users", ConvertUser.usersToUserInfos(userService.getAll()));
+		return "admin-home";
 	}
 }

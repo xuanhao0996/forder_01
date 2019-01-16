@@ -26,7 +26,7 @@ public class HomeController extends BaseController {
 
 	private static final Logger logger = Logger.getLogger(HomeController.class);
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value =  "/")
 	public ModelAndView index(HttpSession httpSession, HttpServletRequest request) {
 		logger.info("home page");
 		ModelAndView modelView = new ModelAndView("home");
